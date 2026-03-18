@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--
+    Berry Buer 
+    ITD 210 Midterm
+    Due Date: 3/9/2026
+    
+    I chose a different color palette because I didn't like the previous one.
+    I'm taking another coding course this semester that focuses on JavaScript, so 
+    I put those skills to use in the nav toggle. I just made sure the 
+    navigation and header was consistent across the other webpage for my own 
+    ease of navigation.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Berry Buer">
+    <title>About Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav-toggle.js" defer></script> <!--mobile nav toggle-->
+</head>
+
+<body>
+    <header>
+        <h1>Berry's Portfolio</h1>
+        <nav> <!--nav menu-drawer overlays all content as child of header z-index: 1-->
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <!--desktop class to show and hide links depending on screen size-->
+                <li class="desktop"><a href="about.html">About Page</a></li>
+                <li class="desktop"><a href="crochet.html">Crochet</a></li>
+                <li class="desktop"><a href="digital_art.html">Digital Art</a></li>
+                <li class="desktop"><a href="physical_art.html">Physical Art</a></li>
+                <li id="nav-toggle" class="mobile-nav">&#9776;</li>
+                <li id="menu-drawer">
+                    <!--javascript interacts with li #menu-drawer by adding and removing 
+                    a class which allows for .links to appear. #nav-toggle and #back 
+                    allow for #menu-drawer toggle -->
+                    <div class="links"> <!--links div class is for styling-->
+                        <a id="back">&#8592; Back</a>
+                        <a href="about.html">About Page</a>
+                        <a href="crochet.html">Crochet</a>
+                        <a href="digital_art.html">Digital Art</a>
+                        <a href="physical_art.html">Physical Art</a>
+                    </div> <!--links-->
+                </li> <!--menu drawer-->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="about-hero" class="hero_image">
+            <!--image and style are applied from css linking to the id and class-->
+            <h3>Here to have fun and make art</h3>
+        </div>
+        <!--Application of style from ids attached to sections-->
+        <!--most divs are pre-existing classes I've reutilized for this webpage-->
+        <section id="about-container">
+            <!--default column flex for small screens, and media query row reverse for larger screens-->
+            <img src="images/highSchool-SeniorPhoto.JPG" alt="professional senior photo of Berry Buer in front of a blue background; blonde boy with square glasses in a tux">
+            <article>
+                <h2>About Me</h2>
+                <p>Hiya! I'm Berry Buer, and I've been attending NOVA since Fall 2024. Ive been gradually working on my
+                    Associates in Visual Arts and my two career certificates in Web Design and Development and
+                    Application Programming. I have quite a few creative hobbies which you might've been able to surmise
+                    from this website.</p>
+                <h3>About the Photos</h3>
+                <p>The photo is one of my senior photos from 2024, and all the pictures in my hobby cards are
+                    photos of my supplies for my various crafts.</p>
+            </article>
+        </section>
+        <section id="skill-cards">
+            <h2>My Hobby Skills</h2>
+            <!--.container and .card reused in tandem with new id to create grid-->
+            <div class="container">
+                <div class="card">
+                    <img src="images/sewing_machine.JPG"
+                        alt="gray Singer sewing machine"><!--sewing machine-->
+                    <h3>Sewing</h3>
+                    <p>While I haven't made enough sewing projects to warrant their own webpage, I do have some basic
+                        skills in sewing. I made my own vest for Prom back in 2023 as well as a wizard costume for
+                        Halloween.</p>
+                </div>
+                <div class="card">
+                    <img src="images/crochet_hook.JPG" alt="crochet hook"><!--close up crochet hook-->
+                    <h3>Crochet</h3>
+                    <p>I actually have a few more yarn related hobbies besides crocheting, but crochet is was I feel
+                        most comfortable with. I know one knit stitch, and I'm quite comfortable with tunisian crochet
+                        since it uses one long crochet hook. I have a habit of making Amigurumi presents for friends and
+                        family.</p>
+                </div>
+                <div class="card">
+                    <img src="images/art_supplies.JPG"
+                        alt="erasers and pencils in a stepped plastic tool box"><!--picture of art box-->
+                    <h3>Physical Art</h3>
+                    <p>I've worked with acrylic paint, oil pastels, colored pencils and charcoal in the past; however,
+                        my most recent art classes on working with graphite and charcoal or simply black and white. A
+                        lot of my recent traditional artwork is still lives in graphite and charcoal.</p>
+                </div>
+                <div class="card">
+                    <img src="images/drawing_tablet.JPG"
+                        alt="drawing tablet with blue edge and buttons alongside a blue number pad"><!--picture of drawing tablet-->
+                    <h3>Digital Art</h3>
+                    <p>I've been enjoying making digital art since I was twelve and doodling on my little phone; I've
+                        since upgraded to a laptop and drawing tablet. I've been digitally painting and animating on
+                        this guy for a couple years now!</p>
+                </div>
+            </div><!--skill cards-->
+        </section>
+        <section id="action-call">
+            <h2>Check Out FireAlpaca!</h2>
+            <a href="https://firealpaca.com/">FireAlpaca Website</a>
+            <p>I've been using FireAlpaca since 2020 or about six year now! It's a great software with good support and
+                great utility, so I suggest you get it out!</p>
+        </section>
+    </main>
+    <footer>
+        <h3>&copy; Berry Buer</h3>
+    </footer>
+</body>
+
+</html>

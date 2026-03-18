@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--
+    Author: Berry Buer
+    Date Created: 1/31/2026
+    Website Topic Art Portfolio
+    ITD 210 Capstone Project
+    Milestone #2 Feedback: start mobile nav, red-orange color not the beeest, 
+    also best to use ~3 colors
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Berry Buer">
+    <title>Berry's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav-toggle.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!--Fun and funky font would go here-->
+        <h1>Berry's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li class="desktop"><a href="about.html">About Page</a></li>
+                <li class="desktop"><a href="crochet.html">Crochet</a></li>
+                <li class="desktop"><a href="digital_art.html">Digital Art</a></li>
+                <li class="desktop"><a href="physical_art.html">Physical Art</a></li>
+                <li id="nav-toggle" class="mobile-nav">&#9776;</li>
+                <li id="menu-drawer">
+                    <div class="links"> <!--links div class is for styling-->
+                        <a id="back">&#8592; Back</a>
+                        <a href="about.html">About Page</a>
+                        <a href="crochet.html">Crochet</a>
+                        <a href="digital_art.html">Digital Art</a>
+                        <a href="physical_art.html">Physical Art</a>
+                    </div> <!--links-->
+                </li> <!--menu drawer-->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero_image">
+            <h3>Welcome to Berry's Portfolio</h3>
+            <p>placeholder image</p>
+        </div>
+        <section>
+            <article>
+                <h2>Welcome!</h2>
+                <p>Art has been a major hobby of mine since middle school when I used IbisPaint to make digital art on
+                    my phone. These days, I use an [XPen] tablet and FireAlpaca to create digital art although I also
+                    use IbisPaint from time to time. </p>
+                <p>I started learning to crochet when I was 8. My dad had a friend who ran a yarn shop, and we went
+                    there to take her crochet lessons that she also sold. In recent years, I've gotten into Amigurumi
+                    (<em>phonetics/pronunciation guide here</em>) or the art of knitting or crocheting dolls or figures.
+                    The practice formally started in Japan; hence, why English borrows the Japanese word for it.</p>
+                <h2>Color Palette</h2>
+                <p>For ease of reference and copy pasting across the website</p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    height="50" width="300">
+                    <rect width="50" height="50" x="0" rx="25" ry="25" fill="#ed6a5a"></rect>
+                    <rect width="50" height="50" x="55" rx="25" ry="25" fill="#f4f1bb"></rect>
+                    <rect width="50" height="50" x="110" rx="25" ry="25" fill="#9bc1bc"></rect>
+                    <rect width="50" height="50" x="165" rx="25" ry="25" fill="#e6ebe0"></rect>
+                    <rect width="50" height="50" x="220" rx="25" ry="25" fill="#36c9c6"></rect>
+                </svg>
+            </article>
+            <article>
+                <h2>Card Webpage Link</h2>
+                <p>Currently contain placeholder images. Later, I want them to flip and contain more text. </p>
+                <div class="container">
+                    <div class="card"> <!--Card 1: About Card-->
+                        <img src="images/250by250px.png" alt="250 by 250 pixels">
+                        <h3>About Me</h3>
+                        <p><a href="about.html">Links to about.html</a></p>
+                    </div>
+                    <div class="card"> <!--Card 2: Crochet Card-->
+                        <img src="images/250by250px.png" alt="250 by 250 pixels">
+                        <h3>Crochet</h3>
+                        <p><a href="crochet.html">Links to crochet.html</a></p>
+                    </div>
+                    <div class="card"> <!--Card 3: Digital Art Card-->
+                        <img src="images/250by250px.png" alt="250 by 250 pixels">
+                        <h3>placeholder image</h3>
+                        <p><a href="digital_art.html">Links to digital_art.html</a></p>
+                    </div>
+                    <div class="card"> <!--Card 4: Physical Art Card-->
+                        <img src="images/250by250px.png" alt="250 by 250 pixels">
+                        <h3>placeholder image</h3>
+                        <p><a href="physical_art.html">Links to physical_art.html</a></p>
+                    </div>
+                </div> <!--container end-->
+                <p>The placeholders are images I created with their pixel count listed inside them. I used them
+                    previously on other projects to reference how big I wanted to make website assets. </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h3>&copy; Berry Buer</h3>
+    </footer>
+</body>
+
+</HTML>

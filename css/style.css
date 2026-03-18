@@ -1,0 +1,334 @@
+/*
+  Author: Berry Buer
+  css for ITD 210 capstone project
+  Filename: style.css
+  
+  mobile first update
+*/
+
+:root { /* for easy reference and updating of design elements */ 
+  /* new color palette */
+  --darkerPurple: #401f3e;
+  --darkPurple: #3f2e56;
+  --coolBlue: #453f78;
+  --paleBlue: #759aab;
+  --cream: #faf2a1;
+  
+  /* opaque and transparent gradients */
+  --clear: rgba(0,0,0,0); /* for easy transparency in elements and gradients */
+  --cuteBlue: linear-gradient(var(--coolBlue), var(--paleBlue));
+  --coolFade: linear-gradient(var(--clear), var(--coolBlue));
+  --blueFade: linear-gradient(var(--clear), var(--paleBlue));
+  
+  /* Borders */
+  --yellowLine: solid var(--cream) 5px;
+  --curve: 25px; /* border radius for elements which have it applied */
+
+  /* Fonts; can easily swap out and change fonts later*/
+  --baseFont: sans-serif; /* majority font used across website */
+  --fancy: serif; /* for embellishment or emphasis */
+}
+
+/*===== simple animations =====*/
+@keyframes slideIn { /*.links menu drawer slides in nicely*/
+  from {transform: translate(100%);}
+}
+
+@keyframes scootUp { /*.card:hover moves up*/
+  to {transform: translateY(-25px);}
+}
+
+/*===== ABSOLUTE RESET =====*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*===== Basic Semantic Styling =====*/
+body {
+  font-family: var(--baseFont);
+  background-image: var(--cuteBlue);
+  line-height: 1.5;
+}
+
+main {
+  border-bottom: solid var(--darkerPurple) 5px;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  background-color: var(--clear);
+  margin: 2em 1em;
+}
+
+article, aside {
+  background-color: white;
+  color: black;
+  border: var(--yellowLine);
+  border-radius: var(--curve);
+  padding: 1em;
+  margin: 1em auto;
+}
+
+header, footer {
+  margin: 0;
+  padding: 1em;
+  background-color: var(--darkPurple);
+  color: var(--cream);
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+  border-radius: var(--curve);
+}
+
+
+/*===== Semantic Text Styling =====*/
+h1 {font-size: clamp(2em, 4vw, 2.5em);}
+h2 {font-size: clamp(1.5em, 4vw, 1.8em)}
+h3 {font-size: clamp(20px, 4vw, 22px);}
+p, li, a {font-size: clamp(16px, 4vw, 18px);}
+p {margin-bottom: 1em;}
+a {color: white}
+a:hover {color: black;}
+
+
+/*==== Navigation =====*/
+.desktop {display: none;} /*hides .desktop links on mobile*/
+
+/*nav link colors*/
+nav a {color: var(--cream)} /*base cream*/
+nav a:hover {color: white} /*hover highlight*/
+.links a:hover {color: rgb(0,0,255)} /*since the background is --paleBlue, blue stands out better*/
+
+
+#nav-toggle, #back {padding: 1px 2px;} /*consistent area for hover highlight*/
+#nav-toggle:hover, #back:hover {
+  cursor: pointer;
+  color: var(--darkerPurple);
+  background-color: var(--cream);
+  border-radius: var(--curve);
+}
+
+header { /*flexes all the content horizontally and spaces it nicely*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /*sticks to top of screen and overlays content*/
+  top: 0;
+  z-index: 1; /*keeps header on top of ALL content*/
+  border-bottom: solid var(--darkerPurple) 5px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+nav ul li {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.links {
+  /*link containing*/
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0;
+  padding: 1em;
+  gap: 10px;
+
+  /*onscreen position*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  /*color*/
+  background-color: var(--paleBlue);
+  border-left: var(--yellowLine);
+  text-transform: capitalize;
+
+  /*animation*/
+  animation: slideIn;
+  animation-duration: 0.8s;
+}
+
+#menu-drawer {display: none;} /*closed #menu-drawer, default position*/
+#menu-drawer.open-drawer {display: block} /*class added and removed by javascript to open up .links*/
+
+/*===== id styling =====
+styling by #ids and children of #id parents */
+#about-hero {
+  /*the hero image in about also relies on styling from .hero_image class*/
+  background-image: linear-gradient(var(--clear), rgba(0,0,255, 0.25)), url("../images/blue_blink.gif");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+
+#about-hero h3 {font-family: var(--fancy);}
+
+#about-container {
+  /*grid with one column for mobile*/
+  display: grid;
+  grid-template-columns: auto;
+}
+
+#about-container img {
+  /*white and square border to make it stand out (and to look like a polaroid for fun)*/
+  border-radius: 0;
+  border: solid white 5px;
+  width: 65% /*the image is larger than the other images, and I don't want it to be too big*/
+}
+
+#skill-cards .container { /*reuses .container class as grid for about.html*/
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1em;
+}
+
+#skill-cards .card { /*once more, reusing .card and applying style as child of #skill cards*/
+  margin: 0;
+  padding: 1em;
+  background-color: var(--cream);
+  color: white;
+}
+
+/*styling the text as children of #skill-cards*/
+#skill-cards h2 {
+  text-align: center;
+  color: white;
+}
+
+#skill-cards p {
+  text-align: left;
+  margin: 0;
+}
+
+#action-call {
+  /* separate section styling to make it stand out from other elements*/
+  padding: 1em;
+  border-color: var(--cream);
+  border-style: solid;
+  border-width: 10px 3px 3px 3px;
+  border-radius: 0;
+  background: var(--coolFade);
+  color: white;
+  text-align: center;
+}
+
+#action-call h2 {
+  font-family: var(--fancy);
+  font-size: clamp(2em, 4vw, 2.5em);
+}
+
+
+/*===== class styling =====
+styling by classes and children of classes*/
+
+.hero_image {
+  height: 100%;
+  background-image: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
+  padding: 5%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.hero_image h3 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  text-shadow: 0 5px 15px var(--darkerPurple);
+  -webkit-text-stroke: 1px white;
+}
+
+.hero_image p {
+  font-size: clamp(1.5em, 6vw, 1.8em);
+  color: white;
+}
+
+.container { /*applies flex to cards on index.html, reused for about.html as a grid*/
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: var(--curve);
+  margin: 5px;
+  background: var(--coolFade);
+}
+
+.card h3 {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 1%;
+  margin: 1%;
+}
+
+.card p {
+  text-align: center;
+}
+
+
+/*===== media queries =====*/
+@media (min-width: 900px) { /*tablets*/
+  /*grid grow to have three columns*/
+  #about-container {grid-template-columns: repeat(3, 1fr);}
+
+  #about-container article {
+    grid-column: span 2; /* spans two columns*/
+    grid-row: 1; /*ensures article and image stay on the same row*/
+  }
+
+	#about-container img {
+    grid-column: 3; /*goes to column 3 behind article*/
+    grid-row: 1;
+    width: 90%; /*image grows to 90% width*/
+  } 
+	
+  /*card grid switches to two columns*/
+  #skill-cards .container {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (min-width: 1000px) {
+  .desktop {display: block;} /*navigation links switch to header*/
+  .links, .mobile-nav {display: none;} /*ensures mobile nav is hidden from desktop*/
+}
+
+@media (min-width: 1200px) { /*desktop & large tablets*/
+  section { /*different section styling for larger screens*/
+    border: var(--yellowLine);
+    border-radius: var(--curve);
+    background: var(--clear);
+    padding: 1em;
+  }
+
+  /*grid grows to four columns*/
+  #skill-cards .container {grid-template-columns: repeat(4, 1fr);}
+
+  /*text stroke grows to fit bigger screen*/
+  #about-hero h3 {-webkit-text-stroke: 1.5px white;}
+
+  .card:hover { /*animation only applies to desktop*/
+    box-shadow: 0 5px 10px var(--darkerPurple);
+    animation: scootUp;
+    animation-duration: .65s;
+  }
+}
