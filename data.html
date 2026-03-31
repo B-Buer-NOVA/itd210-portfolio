@@ -1,15 +1,12 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!--
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
-    <title>Page 2</title>
+    <title>Fetch API Practice</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/nav-toggle.js" defer></script>
 </head>
 
 <body>
@@ -39,20 +36,30 @@
     </header>
     <main>
         <section>
-            <h2>Crochet</h2>
+            <h2>Fetch Practice</h2>
             <article>
-                <p>images would be here</p>
-            </article>
-            <aside>
-                <h3>Plans for this page</h3>
-                <p>This page would host various images of my past crochet projects as well as include descriptions and
+                <h3>Fetch Data</h3>
+                <p>This is some JavaScript practice with fetching and displaying data from nested recipes JSON from
+                    <a href="https://dummyjson.com/" target="_blank">DummyJSON.com</a>. I would've liked to move
+                    'Ingredients' and 'Instructions' to another row, but I couldn't get it to work. In the future, I
+                    hope to update the JavaScript for a better table design.
                 </p>
-            </aside>
+                <p>Every press of the button will add a recipe below the last recipe</p>
+                <h3>Status</h3>
+                <p id="loadingMessage" style="display:none;">Loading Request</p> <!--display: none-->
+                <p id="errorMessage"></p> <!--receives message from javascript-->
+                <h3>Data Container</h3>
+                <button id="loadButton">Fetch a Recipe!</button>
+                <p id="array"></p>
+                <aside id="dataContainer"></aside> <!--data will go inside container-->
+            </article>
         </section>
     </main>
     <footer>
-        <h3>&copy; Berry Buer</h3>
+        <h3>&copy; Berry Buer 2026</h3>
     </footer>
 </body>
+<script src="js/nav-toggle.js" defer></script>
+<script src="js/fetch.js"></script>
 
 </html>

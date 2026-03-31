@@ -4,14 +4,9 @@
 <head>
     <!--
     Berry Buer 
-    ITD 210 Midterm
+    ITD 210 Midterm, About Page
     Due Date: 3/9/2026
-    
-    I chose a different color palette because I didn't like the previous one.
-    I'm taking another coding course this semester that focuses on JavaScript, so 
-    I put those skills to use in the nav toggle. I just made sure the 
-    navigation and header was consistent across the other webpage for my own 
-    ease of navigation.
+
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,25 +19,23 @@
 <body>
     <header>
         <h1>Berry's Portfolio</h1>
-        <nav> <!--nav menu-drawer overlays all content as child of header z-index: 1-->
+        <nav>
             <ul>
                 <li><a href="index.html">Home Page</a></li>
-                <!--desktop class to show and hide links depending on screen size-->
                 <li class="desktop"><a href="about.html">About Page</a></li>
                 <li class="desktop"><a href="crochet.html">Crochet</a></li>
                 <li class="desktop"><a href="digital_art.html">Digital Art</a></li>
                 <li class="desktop"><a href="physical_art.html">Physical Art</a></li>
+                <li class="desktop"><a href="data.html">Data Demo</a></li>
                 <li id="nav-toggle" class="mobile-nav">&#9776;</li>
                 <li id="menu-drawer">
-                    <!--javascript interacts with li #menu-drawer by adding and removing 
-                    a class which allows for .links to appear. #nav-toggle and #back 
-                    allow for #menu-drawer toggle -->
                     <div class="links"> <!--links div class is for styling-->
                         <a id="back">&#8592; Back</a>
                         <a href="about.html">About Page</a>
                         <a href="crochet.html">Crochet</a>
                         <a href="digital_art.html">Digital Art</a>
                         <a href="physical_art.html">Physical Art</a>
+                        <a href="data.html">Data Demo</a>
                     </div> <!--links-->
                 </li> <!--menu drawer-->
             </ul>
@@ -57,7 +50,8 @@
         <!--most divs are pre-existing classes I've reutilized for this webpage-->
         <section id="about-container">
             <!--default column flex for small screens, and media query row reverse for larger screens-->
-            <img src="images/highSchool-SeniorPhoto.JPG" alt="professional senior photo of Berry Buer in front of a blue background; blonde boy with square glasses in a tux">
+            <img src="images/highSchool-SeniorPhoto.JPG"
+                alt="professional senior photo of Berry Buer in front of a blue background; blonde boy with square glasses in a tux">
             <article>
                 <h2>About Me</h2>
                 <p>Hiya! I'm Berry Buer, and I've been attending NOVA since Fall 2024. Ive been gradually working on my
@@ -74,8 +68,7 @@
             <!--.container and .card reused in tandem with new id to create grid-->
             <div class="container">
                 <div class="card">
-                    <img src="images/sewing_machine.JPG"
-                        alt="gray Singer sewing machine"><!--sewing machine-->
+                    <img src="images/sewing_machine.JPG" alt="gray Singer sewing machine"><!--sewing machine-->
                     <h3>Sewing</h3>
                     <p>While I haven't made enough sewing projects to warrant their own webpage, I do have some basic
                         skills in sewing. I made my own vest for Prom back in 2023 as well as a wizard costume for
