@@ -317,6 +317,8 @@ styling by #ids and children of #id parents */
   font-size: clamp(2em, 4vw, 2.5em);
 }
 
+#fetch {color: white}
+
 /*===== class styling =====
 styling by classes and children of classes*/
 
@@ -370,22 +372,20 @@ table {
   font-family: arial;
   margin: auto;
   margin-bottom: 10px;
-  display: block;
   border-bottom: dashed 5px var(--darkerPurple);
-  overflow-x: scroll;
-}
-
-table img {
-  min-width: 250px;
+  width: 100%;
+  max-width: 100%;
 }
 
 th,
 td,
 tr {
-  padding: 5px;
+  padding: 1%;
   font-size: clamp(14px, 4vw, 16px);
   border-right: solid var(--paleBlue) 3px;
   border-bottom: solid var(--paleBlue) 3px;
+  overflow-wrap: break-word; /* Break long words */
+  hyphens: auto; /* Add hyphens for better wrapping (optional) */
 }
 
 th {

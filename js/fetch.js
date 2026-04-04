@@ -49,34 +49,64 @@ function createTable(data) {
     let recipe = Object.values(data.recipes[randIndex]); // data from random recipe
 
     // variables for table
-    const topRowList = ["", "name", "ingredients", "instructions", "prep time", "time to cook", "servings", "difficulty", "cuisine", "calories per serving"];
+    const infoRowList = ["prep time", "time to cook", "servings", "difficulty", "cuisine", "calories per serving"];
+    const otherList = ["ingredients", "instructions"];
     const table = document.createElement("table");
-    const td = document.createElement("td");
-    const tr = document.createElement("td");
-    let topRow = document.createElement("tr"); // stores strings from topRowList array for headers
-    let bottomRow = document.createElement("tr"); // stores data from the JSON
+    
+    const tr = document.createElement("tr");
+    const infoRow = document.createElement("tr"); // stores strings from infoRowList array for headers
+    const imageRow = document.createElement("tr");
+    const bottomRow = document.createElement("tr"); // stores data from the JSON
+    const twoListsHeader = document.createElement("tr")
+    const twoLists = document.createElement("tr");
+
+    // cleaning up the data table
+    let recipeName = recipe[1];
+    
+    let ingredients = recipe[2];
+    let instructions = recipe[3];
 
     // creates top row information
-    topRowList.forEach(text => {
+    infoRowList.forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
-        topRow.appendChild(th);
+        infoRow.appendChild(th);
     });
-    table.appendChild(topRow);
+    
 
-    let imageStore = '<img src="' + data.recipes[randIndex].image +
-        '" alt="' + data.recipes[randIndex].name + ', ' + data.recipes[randIndex].cuisine + '">';
-    // image and alt text from JSON file
-    td.innerHTML = imageStore;
-    bottomRow.appendChild(td);
+    
+    
 
-    for (let i = 1; i < 10; i++) {
+    
+
+    for (let i = 4; i < 6; i++) {
+        const info = document.createElement("td");
+        info.textContent = recipe[i] + " minutes";
+        bottomRow.appendChild(info);
+    }
+    for (let i = 6; i < 10; i++) {
         const info = document.createElement("td");
         info.textContent = recipe[i];
         bottomRow.appendChild(info);
     }
+    
+    // manual creation
+    // top row, recipe name
+    tr.innerHTML  = '<th colspan="6">' + recipeName + "</th>";
+    // creates bottom row information
+    let imageStore = '<img src="' + data.recipes[randIndex].image +
+        '" alt="' + data.recipes[randIndex].name + ', ' + data.recipes[randIndex].cuisine + '">';
+    imageRow.innerHTML = '<td colspan="6">' + imageStore + "</td>";
+    // instructions and ingredients colspan
+    twoListsHeader.innerHTML = '<th colspan="3">' + otherList[0] + "</th>" + '<th colspan="3">' + otherList[1] + "</th>";
+    twoLists.innerHTML = '<td colspan="3">' + ingredients + '</td>' + '<td colspan="3">' + instructions + '</td>';
 
+    table.appendChild(tr);
+    table.appendChild(imageRow);
+    table.appendChild(infoRow);
     table.appendChild(bottomRow);
+    table.appendChild(twoListsHeader)
+    table.appendChild(twoLists);
     dataContainer.appendChild(table); // sends to HTML
 }
 
