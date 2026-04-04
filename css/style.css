@@ -371,8 +371,6 @@ styling by classes and children of classes*/
 table {
   font-family: arial;
   margin: auto;
-  margin-bottom: 10px;
-  border-bottom: dashed 5px var(--darkerPurple);
   width: 100%;
   max-width: 100%;
 }
@@ -380,6 +378,7 @@ table {
 th,
 td,
 tr {
+  max-width: min-content;
   padding: 1%;
   font-size: clamp(14px, 4vw, 16px);
   border-right: solid var(--paleBlue) 3px;
@@ -391,6 +390,11 @@ tr {
 th {
   text-transform: capitalize;
   background: linear-gradient(var(--clear), lightblue);
+}
+
+td ul, td ol {
+  margin: 1em;
+  padding: 1%;
 }
 
 input,
