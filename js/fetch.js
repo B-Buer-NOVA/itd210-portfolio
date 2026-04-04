@@ -62,7 +62,6 @@ function createTable(data) {
 
     // cleaning up the data table
     let recipeName = recipe[1];
-    
     let ingredients = recipe[2];
     let instructions = recipe[3];
 
@@ -72,13 +71,7 @@ function createTable(data) {
         th.textContent = text;
         infoRow.appendChild(th);
     });
-    
-
-    
-    
-
-    
-
+  
     for (let i = 4; i < 6; i++) {
         const info = document.createElement("td");
         info.textContent = recipe[i] + " minutes";
