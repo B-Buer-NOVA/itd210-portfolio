@@ -14,7 +14,6 @@ const arrayLength = document.getElementById("array");
 
 async function fetchRecipe() {
     // text strings
-    const meanToMe = "Something went wrong. :/ you suck at this";
     const printFailure = "Something went wrong, please try again";
     const printSuccess = "Data successfully loaded!";
 
@@ -34,7 +33,7 @@ async function fetchRecipe() {
         createTable(recipes); // sends to function that creates the table
 
     } catch (error) {
-        errorMessage.innerHTML = meanToMe + `<p>Error: ${error.message}</p>`;
+        errorMessage.textContent = printFailure + " | Error: " + error.message;
         return null;
 
     } finally {
