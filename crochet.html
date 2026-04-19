@@ -7,9 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
-    <title>Page 2</title>
+    <title>Crochet Gallery</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/nav-toggle.js" defer></script>
 </head>
 
 <body>
@@ -39,20 +38,28 @@
     </header>
     <main>
         <section>
-            <h2>Crochet</h2>
-            <article>
-                <p>images would be here</p>
+            <h2>Crochet Gallery</h2>
+            <article id="crochet-grid">
+                <!--nine images go here, div with images delivered from JavaScript-->
             </article>
-            <aside>
-                <h3>Plans for this page</h3>
-                <p>This page would host various images of my past crochet projects as well as include descriptions and
-                </p>
-            </aside>
+            <article>
+                <h3>Background</h3>
+                <p>Crochet has been my hobby for several years now. These are three dolls I crochet for my nephews and
+                    niece back in 2024. I took these photos over the course of their creation. I didn't give them names
+                    myself since I wanted the kids to name them themselves; I'd have to check in with my sister to see
+                    what the kids named them. I have a habit of crocheting dolls and the like for my friends and family
+                    around christmas time.</p>
+            </article>
         </section>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
 </body>
+<script src="js/nav-toggle.js"></script>
+<script src="js/insert_image.js"></script>
+<script>
+    window.addEventListener("load", crochet());
+</script>
 
 </html>

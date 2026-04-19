@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
-    <title>Page 4</title>
+    <title>Traditional Art Gallery</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/nav-toggle.js" defer></script>
+
 </head>
 
 <body>
@@ -39,14 +39,17 @@
     </header>
     <main>
         <section>
-            <h2>Physical Art</h2>
-            <article>
-                <p>This space has been intentionally left blank</p>
+            <h2>Traditional Art Gallery</h2>
+            <article id="physical-grid">
+                <!--javascript puts gallery here-->
             </article>
             <aside>
-                <h3>Plans for this page</h3>
-                <p>This would host photos of my physical art sorted either by medium or. course. depends on what i want
-                    to focus on e. </p>
+                <h3>Background</h3>
+                <p>The majority of these pieces (except for the last image) were made during high school. I do have
+                    plenty of drawing I've made during my art courses here at NOVA; however, I haven't made an effort to
+                    make an digital photo archive of that work. The last three images are from my dream journal (which
+                    is honestly more aptly my nightmare diary), and they're both some of the most vivid dreams I've had.
+                </p>
             </aside>
         </section>
     </main>
@@ -54,5 +57,10 @@
         <h3>&copy; Berry Buer</h3>
     </footer>
 </body>
+<script src="js/nav-toggle.js"></script>
+<script src="js/insert_image.js"></script>
+<script>
+    window.addEventListener("load", traditional())
+</script>
 
 </html>

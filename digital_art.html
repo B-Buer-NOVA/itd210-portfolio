@@ -7,9 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
-    <title>Page 3</title>
+    <title>Digital Art Gallery</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/nav-toggle.js" defer></script>
 </head>
 
 <body>
@@ -40,16 +39,16 @@
     <main>
         <section>
             <h2>Digital Art</h2>
-            <article>
-                <h3>2020</h3>
-                <p>images would go here</p>
-                <h3>2021</h3>
-                <p>images would go here</p>
-                <h3>etc.</h3>
+            <article id="digital-grid">
+                <!--javascript puts gallery here-->
             </article>
             <aside>
-                <h3>Plans for this page</h3>
-                <p>This would host my various pieces of digital art sorted by year with &lt;h3&gt; headers.</p>
+                <h3>Background</h3>
+                <p>The images are (from left to right, top to bottom) are organized in chronological order spanning 2020
+                    to 2025. The most recent drawing (the one with the file type icons) is a version of an icon I made
+                    for a custom shortcut on my desktop. I wouldn't say any of this is my best work, but I think it's a
+                    fun span that shows my progress as an artist! </p>
+                <p>In the future, I'll probably update the grid organization and artwork showcased.</p>
             </aside>
         </section>
         </section>
@@ -58,5 +57,10 @@
         <h3>&copy; Berry Buer</h3>
     </footer>
 </body>
+<script src="js/nav-toggle.js"></script>
+<script src="js/insert_image.js"></script>
+<script>
+    window.addEventListener("load", digital())
+</script>
 
 </html>

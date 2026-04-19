@@ -15,17 +15,21 @@
   --paleBlue: #759aab;
   --cream: #faf2a1;
 
-  /* opaque and transparent gradients */
-  --clear: rgba(0, 0, 0, 0);
   /* for easy transparency in elements and gradients */
+  --clear: rgba(0, 0, 0, 0);
+
+  /* opaque and transparent gradients */
   --cuteBlue: linear-gradient(var(--coolBlue), var(--paleBlue));
   --coolFade: linear-gradient(var(--clear), var(--coolBlue));
   --blueFade: linear-gradient(var(--clear), var(--paleBlue));
+  /* hero images, for easy reference and alteration */
+  --placeholderHero: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
+  --indexHero: url("../images/artshow_sumbmission.jpg");
+  --aboutHero: linear-gradient(var(--clear), rgba(0, 0, 255, 0.25)), url("../images/blue_blink.gif");
 
   /* Borders */
   --yellowLine: solid var(--cream) 5px;
   --curve: 25px;
-  /* border radius for elements which have it applied */
 
   /* Fonts; can easily swap out and change fonts later*/
   --baseFont: sans-serif;
@@ -101,11 +105,59 @@ footer {
 }
 
 img {
+  /*basic styling that applies to all images*/
   max-width: 100%;
   height: auto;
   object-fit: cover;
   margin: auto;
   border-radius: var(--curve);
+}
+
+table {
+  /*fetch API update*/
+  font-family: arial;
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+th,
+td,
+tr {
+  max-width: min-content;
+  padding: 1%;
+  font-size: clamp(14px, 4vw, 16px);
+  border-right: solid var(--paleBlue) 3px;
+  border-bottom: solid var(--paleBlue) 3px;
+  overflow-wrap: break-word;
+  /* Break long words */
+  hyphens: auto;
+  /* Add hyphens for better wrapping (optional) */
+}
+
+th {
+  text-transform: capitalize;
+  background: linear-gradient(var(--clear), lightblue);
+}
+
+td ul,
+td ol {
+  margin: 1em;
+  padding: 1%;
+}
+
+input,
+button {
+  font-size: clamp(14px, 4vw, 16px);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  border-color: var(--coolBlue);
+  background-color: var(--cream);
 }
 
 /*===== Semantic Text Styling =====*/
@@ -115,6 +167,10 @@ h1 {
 
 h2 {
   font-size: clamp(1.5em, 4vw, 1.8em)
+}
+
+section>h2 {
+  color: white
 }
 
 h3 {
@@ -166,8 +222,6 @@ nav a:hover {
 }
 
 /*since the background is --paleBlue, blue stands out better*/
-
-
 #nav-toggle,
 #back {
   padding: 1px 2px;
@@ -247,13 +301,19 @@ nav ul li {
 
 /*===== id styling =====
 styling by #ids and children of #id parents */
+#index-cards .card:active {
+  /*active click only applies to cards on index.html*/
+  box-shadow: 0px 10px 20px var(--darkerPurple);
+}
+
 #about-hero {
   /*the hero image in about also relies on styling from .hero_image class*/
-  background-image: linear-gradient(var(--clear), rgba(0, 0, 255, 0.25)), url("../images/blue_blink.gif");
+  background-image: var(--aboutHero);
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
   position: relative;
+  padding: 5%;
 }
 
 #about-hero h3 {
@@ -317,18 +377,17 @@ styling by #ids and children of #id parents */
   font-size: clamp(2em, 4vw, 2.5em);
 }
 
-#fetch {color: white}
-
 /*===== class styling =====
 styling by classes and children of classes*/
 
 .hero_image {
   height: 100%;
-  background-image: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
-  padding: 5%;
+  background-image: var(--indexHero);
   margin: auto;
+  padding: 15%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   text-align: center;
 }
 
@@ -343,74 +402,70 @@ styling by classes and children of classes*/
   color: white;
 }
 
+/*new index.html card organization; copied from module 10 animation assignment*/
 .container {
   /*applies flex to cards on index.html, reused for about.html as a grid*/
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1em;
 }
 
 .card {
   border-radius: var(--curve);
-  margin: 5px;
   background: var(--coolFade);
+  /*grid to stack text on top of image*/
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  align-items: center;
+  /*animation*/
+  transition: transform 0.5s ease
+}
+
+.card:hover {
+  box-shadow: 0 5px 10px var(--darkerPurple);
+}
+
+.card img {
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  object-fit: cover;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .card h3 {
-  text-align: center;
+  /*my code*/
   text-transform: capitalize;
   padding: 1%;
-  margin: 1%;
+  font-family: var(--fancy);
+  color: white;
+  grid-area: 1 / 1 / 2 / 2;
+  text-shadow: 0 15px 25px var(--darkerPurple);
+  font-size: 400%;
+  line-break: loose;
+  transform: scaleX(100%), scaleY(100%);
 }
 
-.card p {
-  text-align: center;
+.image-grid {
+  /*one column, basic mobile*/
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0.5em;
+  align-items: center;
 }
 
-/*table FETCH API UPDATE*/
-table {
-  font-family: arial;
-  margin: auto;
-  width: 100%;
-  max-width: 100%;
+.image-grid img {
+  margin: 0;
+  padding: 0;
 }
 
-th,
-td,
-tr {
-  max-width: min-content;
-  padding: 1%;
-  font-size: clamp(14px, 4vw, 16px);
-  border-right: solid var(--paleBlue) 3px;
-  border-bottom: solid var(--paleBlue) 3px;
-  overflow-wrap: break-word; /* Break long words */
-  hyphens: auto; /* Add hyphens for better wrapping (optional) */
+.span-2,
+.span-3 {
+  grid-column: span 1;
+  grid-row: span 1;
 }
-
-th {
-  text-transform: capitalize;
-  background: linear-gradient(var(--clear), lightblue);
-}
-
-td ul, td ol {
-  margin: 1em;
-  padding: 1%;
-}
-
-input,
-button {
-  font-size: clamp(14px, 4vw, 16px);
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-button {
-  border-color: var(--coolBlue);
-  background-color: var(--cream);
-}
-
 
 /*===== media queries =====*/
 @media (min-width: 900px) {
@@ -440,6 +495,21 @@ button {
   #skill-cards .container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .image-grid {
+    /*three by three grid*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  .span-3 {
+    grid-column: span 3;
+  }
+
 }
 
 @media (min-width: 1000px) {
@@ -451,9 +521,8 @@ button {
   .links,
   .mobile-nav {
     display: none;
+    /*ensures mobile nav is hidden from desktop*/
   }
-
-  /*ensures mobile nav is hidden from desktop*/
 }
 
 @media (min-width: 1200px) {
@@ -480,7 +549,39 @@ button {
   .card:hover {
     /*animation only applies to desktop*/
     box-shadow: 0 5px 10px var(--darkerPurple);
-    animation: scootUp;
-    animation-duration: .65s;
+    transform: translateY(-25px);
+  }
+
+  /*grid grows to three columns*/
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduced) {
+
+  /*copied from module 10 animation assignment*/
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    /*reveal class immediately appears*/
+    opacity: 1;
+    transform: none;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    /* cards don't translate up, only shadow highlight / glow*/
+    box-shadow: 0 5px 10px var(--darkerPurple);
+    transform: none;
   }
 }

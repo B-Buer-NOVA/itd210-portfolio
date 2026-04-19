@@ -1,0 +1,8 @@
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    height="50" width="300">
+                    <rect width="50" height="50" x="0" rx="25" ry="25" fill="#ed6a5a"></rect>
+                    <rect width="50" height="50" x="55" rx="25" ry="25" fill="#f4f1bb"></rect>
+                    <rect width="50" height="50" x="110" rx="25" ry="25" fill="#9bc1bc"></rect>
+                    <rect width="50" height="50" x="165" rx="25" ry="25" fill="#e6ebe0"></rect>
+                    <rect width="50" height="50" x="220" rx="25" ry="25" fill="#36c9c6"></rect>
+                </svg>
