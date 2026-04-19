@@ -51,7 +51,7 @@ function imageCreation(altText, folderName, fileExtension) {
     for (let i = 0; i < altText.length; i++) {
         // creating the <img> strings based of of all description array and adding them to an array
         let picture = i + 1; // image name go from 1 to 9
-        imageStrings.push("<img src='images/" + folderName + "/" + picture + fileExtension + "' alt='" + altText[i] + "'>");
+        imageStrings.push("<img src='images/" + folderName + "/" + picture + fileExtension + "' loading='lazy' alt='" + altText[i] + "'>");
     }
 
     return imageStrings
