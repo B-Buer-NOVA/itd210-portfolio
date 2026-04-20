@@ -394,15 +394,10 @@ styling by classes and children of classes*/
   text-align: center;
 }
 
-.hero_image h2 {
+.hero_image>h2 {
   font-size: clamp(3rem, 6vw, 5rem);
   text-shadow: 0 5px 15px var(--darkerPurple);
   -webkit-text-stroke: 1px white;
-}
-
-.hero_image p {
-  font-size: clamp(1.5em, 6vw, 1.8em);
-  color: white;
 }
 
 /*new index.html card organization; copied from module 10 animation assignment*/
