@@ -14,14 +14,13 @@
   --coolBlue: #453f78;
   --paleBlue: #759aab;
   --cream: #faf2a1;
-
-  /* for easy transparency in elements and gradients */
   --clear: rgba(0, 0, 0, 0);
 
   /* opaque and transparent gradients */
   --cuteBlue: linear-gradient(var(--coolBlue), var(--paleBlue));
   --coolFade: linear-gradient(var(--clear), var(--coolBlue));
   --blueFade: linear-gradient(var(--clear), var(--paleBlue));
+
   /* hero images, for easy reference and alteration */
   --placeholderHero: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
   --indexHero: url("../images/artshow_sumbmission.jpg");
@@ -33,9 +32,7 @@
 
   /* Fonts; can easily swap out and change fonts later*/
   --baseFont: sans-serif;
-  /* majority font used across website */
   --fancy: serif;
-  /* for embellishment or emphasis */
 }
 
 /*===== simple animations =====*/
@@ -47,11 +44,10 @@
   }
 }
 
-@keyframes scootUp {
-
-  /*.card:hover moves up*/
+@keyframes loadIn {
   to {
-    transform: translateY(-25px);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
@@ -66,6 +62,9 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 /*===== Basic Semantic Styling =====*/
 body {
@@ -202,26 +201,32 @@ a {
 /*==== Navigation =====*/
 .desktop {
   display: none;
+  /*hides .desktop links on mobile*/
 }
 
-/*hides .desktop links on mobile*/
-
-/*nav link colors*/
 nav a {
+  /*nav link colors*/
   color: var(--cream)
 }
 
-/*base cream*/
 nav a:hover {
+  /*base cream*/
   color: white
 }
 
-/*hover highlight*/
+nav a:focus {
+  /*also applies to .link*/
+  outline-offset: 7.5px;
+  outline-width: 3px;
+  outline-color: var(--cream);
+}
+
 .links a:hover {
+  /*hover highlight*/
+  /*since the background is --paleBlue, blue stands out better*/
   color: rgb(0, 0, 255)
 }
 
-/*since the background is --paleBlue, blue stands out better*/
 #nav-toggle,
 #back {
   padding: 1px 2px;
@@ -297,8 +302,6 @@ nav ul li {
   display: block
 }
 
-/*class added and removed by javascript to open up .links*/
-
 /*===== id styling =====
 styling by #ids and children of #id parents */
 #index-cards .card:active {
@@ -316,7 +319,7 @@ styling by #ids and children of #id parents */
   padding: 5%;
 }
 
-#about-hero h3 {
+#about-hero h2 {
   font-family: var(--fancy);
 }
 
@@ -391,7 +394,7 @@ styling by classes and children of classes*/
   text-align: center;
 }
 
-.hero_image h3 {
+.hero_image h2 {
   font-size: clamp(3rem, 6vw, 5rem);
   text-shadow: 0 5px 15px var(--darkerPurple);
   -webkit-text-stroke: 1px white;
@@ -436,7 +439,6 @@ styling by classes and children of classes*/
 }
 
 .card h3 {
-  /*my code*/
   text-transform: capitalize;
   padding: 1%;
   font-family: var(--fancy);
@@ -445,7 +447,6 @@ styling by classes and children of classes*/
   text-shadow: 0 15px 25px var(--darkerPurple);
   font-size: 400%;
   line-break: loose;
-  transform: scaleX(100%), scaleY(100%);
 }
 
 .image-grid {
@@ -465,6 +466,59 @@ styling by classes and children of classes*/
 .span-3 {
   grid-column: span 1;
   grid-row: span 1;
+}
+
+/* lightbox overlay */
+.lightbox {
+  border: white 5px solid;
+  /*basic function*/
+  display: none;
+  /*margins*/
+  margin: 5em;
+  padding: 1em;
+  overflow: auto;
+  /*color & design*/
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--curve);
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  /*div created by javascript that holds the images, which lightbox.js retrieves from*/
+  position: relative;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+}
+
+.slides {
+  /*images in the lightbox & light*/
+  display: none;
+  border-radius: 0;
+}
+
+.caption {
+  margin: auto;
+  padding: .25em;
+  color: white;
+  text-align: center;
+  border: white 3px solid;
+}
+
+.close {
+  /*x button in lightbox*/
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*===== media queries =====*/
@@ -549,7 +603,7 @@ styling by classes and children of classes*/
   .card:hover {
     /*animation only applies to desktop*/
     box-shadow: 0 5px 10px var(--darkerPurple);
-    transform: translateY(-25px);
+    transform: translateY(-10px);
   }
 
   /*grid grows to three columns*/
@@ -558,7 +612,7 @@ styling by classes and children of classes*/
   }
 }
 
-@media (prefers-reduced-motion: reduced) {
+@media (prefers-reduced-motion: reduce) {
 
   /*copied from module 10 animation assignment*/
   *,
@@ -567,12 +621,6 @@ styling by classes and children of classes*/
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .reveal {
-    /*reveal class immediately appears*/
-    opacity: 1;
-    transform: none;
   }
 
   .card {
