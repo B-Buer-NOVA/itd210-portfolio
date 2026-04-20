@@ -38,29 +38,33 @@
     </header>
     <main>
         <section>
-            <h2>Digital Art</h2>
-            <article id="digital-grid">
+            <h2>Digital Art Gallery</h2>
+            <aside id="digital-grid">
+                <p>Click an image to read more about it!</p>
                 <!--javascript puts gallery here-->
-            </article>
+            </aside>
             <aside>
                 <h3>Background</h3>
-                <p>The images are (from left to right, top to bottom) are organized in chronological order spanning 2020
-                    to 2025. The most recent drawing (the one with the file type icons) is a version of an icon I made
-                    for a custom shortcut on my desktop. I wouldn't say any of this is my best work, but I think it's a
-                    fun span that shows my progress as an artist! </p>
+                <p>The images are (from left to right, top to bottom) are roughly organized in chronological order spanning 2020
+                    to 2024. I wouldn't say any of this is my best work, but I think it's little sample of my art!</p>
                 <p>In the future, I'll probably update the grid organization and artwork showcased.</p>
             </aside>
         </section>
-        </section>
+        <div class="lightbox">
+            <span class="close" onclick="closeBox()">&times;</span>
+        </div>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <script src="js/nav-toggle.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/insert_image.js"></script>
+    <script>
+        window.addEventListener("load", digital())
+        window.addEventListener("load", digitalLightbox())
+    </script>
 </body>
-<script src="js/nav-toggle.js"></script>
-<script src="js/insert_image.js"></script>
-<script>
-    window.addEventListener("load", digital())
-</script>
+
 
 </html>

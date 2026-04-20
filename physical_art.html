@@ -9,7 +9,6 @@
     <meta name="Author" content="Berry Buer">
     <title>Traditional Art Gallery</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -40,27 +39,34 @@
     <main>
         <section>
             <h2>Traditional Art Gallery</h2>
-            <article id="physical-grid">
+            <aside id="physical-grid">
+                <p>Click an image to read more about it!</p>
                 <!--javascript puts gallery here-->
-            </article>
+            </aside>
             <aside>
                 <h3>Background</h3>
-                <p>The majority of these pieces (except for the last image) were made during high school. I do have
-                    plenty of drawing I've made during my art courses here at NOVA; however, I haven't made an effort to
-                    make an digital photo archive of that work. The last three images are from my dream journal (which
-                    is honestly more aptly my nightmare diary), and they're both some of the most vivid dreams I've had.
-                </p>
+                <p>These pieces were made during high school. I do have plenty of drawing I've made during my art
+                    courses here at NOVA; however, I haven't made an effort to make an digital photo archive of that
+                    work. Meanwhile, I have a lot of photos of my high school artwork since I usually had to submit
+                    photos of them to Canvas.</p>
             </aside>
         </section>
+
+        <div class="lightbox">
+            <span class="close" onclick="closeBox()">&times;</span>
+        </div>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <script src="js/nav-toggle.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/insert_image.js"></script>
+    <script>
+        window.addEventListener("load", traditional());
+        window.addEventListener("load", traditionalLightbox());
+    </script>
+
 </body>
-<script src="js/nav-toggle.js"></script>
-<script src="js/insert_image.js"></script>
-<script>
-    window.addEventListener("load", traditional())
-</script>
 
 </html>

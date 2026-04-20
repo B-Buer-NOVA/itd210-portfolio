@@ -45,9 +45,25 @@
 }
 
 @keyframes loadIn {
+
+  /*animation from module 10 assignment, yet to be implemented*/
   to {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+@keyframes increase {
+
+  /*animation for gallery overlays*/
+  from {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -450,10 +466,11 @@ styling by classes and children of classes*/
   grid-template-columns: auto;
   gap: 0.5em;
   align-items: center;
+  justify-content: center;
 }
 
 .image-grid img {
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -465,18 +482,26 @@ styling by classes and children of classes*/
 
 /* lightbox overlay */
 .lightbox {
-  border: white 5px solid;
   /*basic function*/
   display: none;
+  position: fixed;
+  top: 1em;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
   /*margins*/
-  margin: 5em;
-  padding: 1em;
+  margin: 0;
+  padding: 2em;
   overflow: auto;
   /*color & design*/
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--darkPurple);
   border-radius: var(--curve);
+  border: var(--yellowLine);
   align-items: center;
   justify-content: center;
+  /* animation */
+  animation: increase;
+  animation-duration: 0.5s;
 }
 
 .light {
@@ -485,7 +510,7 @@ styling by classes and children of classes*/
   justify-content: center;
   margin: auto;
   padding: 0;
-  width: 50%;
+  width: 100%;
 }
 
 .slides {
@@ -495,25 +520,31 @@ styling by classes and children of classes*/
 }
 
 .caption {
-  margin: auto;
-  padding: .25em;
-  color: white;
-  text-align: center;
-  border: white 3px solid;
+  /*Descriptions and background for individual images (separate from alt text)*/
+  display: none;
+  margin: 1em auto;
+  padding: .75em;
+  background: white;
+  text-align: left;
+  border-radius: var(--curve);
 }
 
 .close {
   /*x button in lightbox*/
   color: white;
-  font-size: 35px;
+  font-size: clamp(2em, 4vw, 2.5em);
+  /*font-size: clamp(1.5em, 4vw, 1.8em*/
   font-weight: bold;
+  position: sticky;
+  padding: 0.25rem 0.5rem;
+  margin: 1rem;
 }
 
 .close:hover,
 .close:focus {
-  color: #999;
   text-decoration: none;
   cursor: pointer;
+  border: 3px white solid;
 }
 
 /*===== media queries =====*/
@@ -546,9 +577,8 @@ styling by classes and children of classes*/
   }
 
   .image-grid {
-    /*three by three grid*/
+    /*three column grid*/
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
   }
 
   .span-2 {
