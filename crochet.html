@@ -39,9 +39,9 @@
     <main>
         <section>
             <h2>Crochet Gallery</h2>
-            <article id="crochet-grid">
+            <aside id="crochet-grid">
                 <!--nine images go here, div with images delivered from JavaScript-->
-            </article>
+            </aside>
             <article>
                 <h3>Background</h3>
                 <p>Crochet has been my hobby for several years now. These are three dolls I crochet for my nephews and
@@ -55,11 +55,12 @@
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <script src="js/nav-toggle.js"></script>
+    <script src="js/insert_image.js"></script>
+    <script>
+        window.addEventListener("load", crochet());
+    </script>
 </body>
-<script src="js/nav-toggle.js"></script>
-<script src="js/insert_image.js"></script>
-<script>
-    window.addEventListener("load", crochet());
-</script>
+
 
 </html>
