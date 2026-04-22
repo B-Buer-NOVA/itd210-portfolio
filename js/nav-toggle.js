@@ -11,4 +11,3 @@ navButton.addEventListener("click", function () {
 backButton.addEventListener("click", function () {
     navMenu.className = '.';
 })
-
