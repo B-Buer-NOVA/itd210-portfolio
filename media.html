@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Page</title>
+    <meta name="Author" content="Berry Buer">
+    <title>Media Page</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .check {
+            /*temp class for canvas instructions list */
+            list-style-type: "\2713  ";
+        }
+    </style>
 </head>
 
 <body>
@@ -18,18 +25,44 @@
     <main>
         <section>
             <h2>Media page</h2>
-            <aside>
-                <p>Content coming soon.</p>
-            </aside>
+            <article>
+                <h3>Placeholder video</h3>
+                <p>I made this for a previous course when we played around with video controls. It allowed me to
+                    implement the HTML without necessarily having all the content done.</p>
+                <video loading="lazy" poster="images/1000by1000px.png" controls>
+                    <source src="videos/placeholder.mp4" type="video/mp4">
+                    Something failed to load, sorry.
+                </video>
+                <h3>Old Music</h3>
+                <p>There's a lot of simple online music production website out there (<a href="https://www.beepbox.co/"
+                        target="_blank">BeepBox</a> and <a href="https://musiclab.chromeexperiments.com/Song-Maker/"
+                        target="_blank">Chrome Music Lab Song Maker</a>, for example), and I played around with them a
+                    little back in the day. Here's a couple of the pieces I made.</p>
+                <h4>it's a little song</h4>
+                <audio controls>
+                    <source src="audio/little_song.mp3" type="audio/mp3">
+                </audio>
+                <h4>Half Step Jam</h4>
+                <audio controls>
+                    <source src="audio/half_step.mp3" type="audio/mp3">
+                </audio>
+                <h4>a song of some kind</h4>
+                <audio controls>
+                    <source src="audio/some_kind.wav" type="audio/wav">
+                </audio>
+            </article>
             <article>
                 <h3>Canvas Instructions</h3>
                 <ul style="margin-left:1em;">
-                    <li>at least one video with native HTML5 controls and poster image</li>
-                    <li>at least one audio element</li>
-                    <li>at least one CSS or JS driven animation; for example, scroll reveal parallax, animated SVG, typewrite effect, etc.</li>
+                    <li class="check">at least one video with native HTML5 controls and poster image</li>
+                    <li class="check">at least one audio element</li>
+                    <li>at least one CSS or JS driven animation; for example, scroll reveal parallax, animated SVG,
+                        typewrite effect, etc.</li>
                     <li>an interactive media control.</li>
-                    <li>ACCESSIBILITY: captions, transcripts, or clear text summary are require for all audio and video</li>
-                    <li>Autoplay is only allowed if media is muted (personally, I won't allow autoplay since I have it disabled on my own browsers)</li>
+                    <li>ACCESSIBILITY: captions, transcripts, or clear text summary are require for all audio and video
+                    </li>
+                    <li class="check">Autoplay is only allowed if media is muted (personally, I won't allow autoplay since I have it
+                        disabled on my own browsers)</li>
                     <li>Proper commentary in HTML, CSS, and JavaScript explaining what it does and why.</li>
                 </ul>
             </article>

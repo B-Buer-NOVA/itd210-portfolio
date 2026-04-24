@@ -129,6 +129,16 @@ img {
   border-radius: var(--curve);
 }
 
+video {
+  max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+audio {
+  background: var(--darkPurple);
+}
+
 table {
   /*fetch API update*/
   font-family: arial;
