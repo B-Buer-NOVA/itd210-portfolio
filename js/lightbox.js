@@ -16,18 +16,19 @@ const slides = document.getElementsByClassName("slides"); // array of images wit
 
 // open and close the lightbox, works without specific ids and on both webpages
 function openBox() {theLightbox.style.display = 'block';}
-function closeBox() {
-    theLightbox.style.display = 'none';
-
-    for (i = 0; slides.length; i++) {
-        slides[i].style.display = 'none';
-        captions[i].style.display = 'none';
-        // ensures all slides and caption are no longer visible
-    }
-}
 
 function currentSlide(n) {
     // n is sent from the clicked image
     slides[n].style.display = 'block';
     captions[n].style.display = 'block';
 };
+
+function closeBox() {
+    theLightbox.style.display = 'none';
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+        captions[i].style.display = 'none';
+        // ensures all slides and caption are no longer visible
+    }
+}

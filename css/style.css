@@ -25,6 +25,7 @@
   --placeholderHero: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
   --indexHero: url("../images/artshow_sumbmission.jpg");
   --aboutHero: linear-gradient(var(--clear), rgba(0, 0, 255, 0.25)), url("../images/blue_blink.gif");
+  --aboutHeroStatic: linear-gradient(var(--clear), rgba(0, 0, 255, 0.25)), url("../images/blue_blink.png");
 
   /* Borders */
   --yellowLine: solid var(--cream) 5px;
@@ -175,6 +176,12 @@ button {
   background-color: var(--cream);
 }
 
+button:hover,
+button:focus {
+  cursor: pointer;
+  outline: 3px solid var(--coolBlue);
+}
+
 /*===== Semantic Text Styling =====*/
 h1 {
   font-size: clamp(2em, 4vw, 2.5em);
@@ -203,15 +210,21 @@ p {
 }
 
 nav a {
-  color: white
+  color: white;
 }
 
 nav a:hover {
   color: black;
+  outline: none;
 }
 
 a {
   color: blue
+}
+
+a:hover,
+a:focus {
+  outline: 2px solid blue;
 }
 
 /*==== Navigation =====*/
@@ -240,21 +253,29 @@ nav a:focus {
 .links a:hover {
   /*hover highlight*/
   /*since the background is --paleBlue, blue stands out better*/
-  color: rgb(0, 0, 255)
+  color: rgb(0, 0, 255);
 }
 
 #nav-toggle,
 #back {
+  color: var(--cream);
+  background-color: var(--clear);
   padding: 1px 2px;
+  border: none;
+  font-size: clamp(16px, 4vw, 18px);
+  text-align: left;
 }
 
 /*consistent area for hover highlight*/
 #nav-toggle:hover,
-#back:hover {
+#nav-toggle:focus,
+#back:hover,
+#back:focus {
   cursor: pointer;
   color: var(--darkerPurple);
   background-color: var(--cream);
   border-radius: var(--curve);
+  outline: none;
 }
 
 header {
@@ -265,7 +286,7 @@ header {
   position: sticky;
   /*sticks to top of screen and overlays content*/
   top: 0;
-  z-index: 1;
+  z-index: 2;
   /*keeps header on top of ALL content*/
   border-bottom: solid var(--darkerPurple) 5px;
 }
@@ -315,7 +336,7 @@ nav ul li {
 
 /*closed #menu-drawer, default position*/
 #menu-drawer.open-drawer {
-  display: block
+  display: block;
 }
 
 /*===== id styling =====
@@ -349,7 +370,7 @@ styling by #ids and children of #id parents */
   /*white and square border to make it stand out (and to look like a polaroid for fun)*/
   border-radius: 0;
   border: solid white 5px;
-  width: 65%
+  width: 65%;
     /*the image is larger than the other images, and I don't want it to be too big*/
 }
 
@@ -434,11 +455,17 @@ styling by classes and children of classes*/
   grid-template-rows: auto;
   align-items: center;
   /*animation*/
-  transition: transform 0.5s ease
+  transition: transform 0.5s ease;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
   box-shadow: 0 5px 10px var(--darkerPurple);
+}
+
+.card:focus {
+  /*cards on index.html have links onclick*/
+  outline: 5px solid var(--coolBlue);
 }
 
 .card img {
@@ -486,7 +513,7 @@ styling by classes and children of classes*/
   display: none;
   position: fixed;
   top: 1em;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   width: 100%;
   /*margins*/
@@ -511,6 +538,19 @@ styling by classes and children of classes*/
   margin: auto;
   padding: 0;
   width: 100%;
+}
+
+.clickMe:hover,
+.clickMe:focus {
+  /*hover and focus effects for images*/
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: ease 0.7s;
+  z-index: 1;
+}
+
+.clickMe:focus {
+  outline: 3px solid var(--coolBlue);
 }
 
 .slides {
@@ -589,6 +629,18 @@ styling by classes and children of classes*/
     grid-column: span 3;
   }
 
+  #digital-grid .clickMe:hover,
+  #digital-grid .clickMe:focus {
+    /*images on digital_art.html increase in size slightly more on larger screens*/
+    transform: scale(1.1);
+  }
+
+  #traditional-grid .clickMe:hover,
+  #traditional-grid .clickMe:focus {
+    /*images on traditional_art.html are already big, so I'm having shrink*/
+    transform: scale(0.95);
+  }
+
 }
 
 @media (min-width: 1000px) {
@@ -625,7 +677,8 @@ styling by classes and children of classes*/
     -webkit-text-stroke: 1.5px white;
   }
 
-  .card:hover {
+  .card:hover,
+  .card:focus {
     /*animation only applies to desktop*/
     box-shadow: 0 5px 10px var(--darkerPurple);
     transform: translateY(-10px);
@@ -656,5 +709,9 @@ styling by classes and children of classes*/
     /* cards don't translate up, only shadow highlight / glow*/
     box-shadow: 0 5px 10px var(--darkerPurple);
     transform: none;
+  }
+
+  #about-hero {
+    background-image: var(--aboutHeroStatic);
   }
 }
