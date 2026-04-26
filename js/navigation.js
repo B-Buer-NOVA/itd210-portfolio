@@ -13,7 +13,7 @@ const linksArray = ['<a href="index.html">Home Page</a>',
     '<a href="crochet.html">Crochet</a>', 
     '<a href="digital_art.html">Digital Art</a>', 
     '<a href="traditional_art.html">Traditional Art</a>', 
-    '<a href="data.html">Date Demo</a>', 
+    '<a href="data.html">Data Demo</a>', 
     '<a href="media.html">Media</a>' ];
 // linksArray holds links of every webpage
 
