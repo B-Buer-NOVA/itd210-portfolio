@@ -29,15 +29,19 @@
                 <h3>Placeholder video</h3>
                 <p>I made this for a previous course when we played around with video controls. It allowed me to
                     implement the HTML without necessarily having all the content done.</p>
-                <video loading="lazy" poster="images/1000by1000px.png" controls>
+                <video poster="videos/placeholder_poster.png" controls muted>
+                    <!--alternate video formats for the browser to choose from-->
                     <source src="videos/placeholder.mp4" type="video/mp4">
+                    <source src="videos/placeholder.webm" type="video/webm">
                     Something failed to load, sorry.
                 </video>
+                <h4>Video Transcript</h4>
+                <p>[sing-song voice] Placeholder video!. Oh my god, that is quiet.</p>
                 <h3>Old Music</h3>
                 <p>There's a lot of simple online music production website out there (<a href="https://www.beepbox.co/"
                         target="_blank">BeepBox</a> and <a href="https://musiclab.chromeexperiments.com/Song-Maker/"
                         target="_blank">Chrome Music Lab Song Maker</a>, for example), and I played around with them a
-                    little back in the day. Here's a couple of the pieces I made.</p>
+                    little back in the day. Here's a couple of the pieces I made with Chrome Music lab.</p>
                 <h4>it's a little song</h4>
                 <audio controls>
                     <source src="audio/little_song.mp3" type="audio/mp3">
@@ -61,7 +65,8 @@
                     <li>an interactive media control.</li>
                     <li>ACCESSIBILITY: captions, transcripts, or clear text summary are require for all audio and video
                     </li>
-                    <li class="check">Autoplay is only allowed if media is muted (personally, I won't allow autoplay since I have it
+                    <li class="check">Autoplay is only allowed if media is muted (personally, I won't allow autoplay
+                        since I have it
                         disabled on my own browsers)</li>
                     <li>Proper commentary in HTML, CSS, and JavaScript explaining what it does and why.</li>
                 </ul>
