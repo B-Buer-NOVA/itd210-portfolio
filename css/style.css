@@ -41,7 +41,16 @@
 
   /*.links menu drawer slides in nicely*/
   from {
-    transform: translate(100%);
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-15%);
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 }
 
@@ -253,7 +262,8 @@ nav a:hover {
   color: white
 }
 
-nav a:focus {
+nav a:focus,
+#gallery-menu:focus {
   /*also applies to .link*/
   outline-offset: 7.5px;
   outline-width: 3px;
@@ -349,6 +359,43 @@ nav ul li {
   display: block;
 }
 
+#gallery-menu {
+  overflow: hidden;
+}
+
+#gallery-menu:hover,
+#gallery-menu:focus {
+  /*gallery link functions the same as others*/
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#galleries-drop {
+  /*dropdown menu for galleries*/
+  cursor: auto;
+  overflow: hidden;
+  display: none;
+  position: fixed;
+  right: 0.5em;
+  /* link organization*/
+  flex-direction: column;
+  text-align: left;
+  margin: 0;
+  padding: 1em;
+  min-width: max-content;
+  gap: 10px;
+  /* similar style to drawer */
+  background-color: var(--paleBlue);
+  border: var(--yellowLine);
+  border-radius: var(--curve);
+  text-transform: capitalize;
+  /*animation*/
+  animation: slideDown;
+  animation-duration: 0.7s;
+}
+
+
 /*===== id styling =====
 styling by #ids and children of #id parents */
 #index-cards .card:active {
@@ -381,7 +428,7 @@ styling by #ids and children of #id parents */
   border-radius: 0;
   border: solid white 5px;
   width: 65%;
-    /*the image is larger than the other images, and I don't want it to be too big*/
+  /*the image is larger than the other images, and I don't want it to be too big*/
 }
 
 #skill-cards .container {
