@@ -7,12 +7,6 @@
     <meta name="Author" content="Berry Buer">
     <title>Media Page</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .check {
-            /*temp class for canvas instructions list */
-            list-style-type: "\2713  ";
-        }
-    </style>
 </head>
 
 <body>
@@ -42,34 +36,39 @@
                         target="_blank">BeepBox</a> and <a href="https://musiclab.chromeexperiments.com/Song-Maker/"
                         target="_blank">Chrome Music Lab Song Maker</a>, for example), and I played around with them a
                     little back in the day. Here's a couple of the pieces I made with Chrome Music lab.</p>
-                <h4>it's a little song</h4>
-                <audio controls>
-                    <source src="audio/little_song.mp3" type="audio/mp3">
-                </audio>
-                <h4>Half Step Jam</h4>
-                <audio controls>
-                    <source src="audio/half_step.mp3" type="audio/mp3">
-                </audio>
-                <h4>a song of some kind</h4>
-                <audio controls>
-                    <source src="audio/some_kind.wav" type="audio/wav">
-                </audio>
-            </article>
-            <article>
-                <h3>Canvas Instructions</h3>
-                <ul style="margin-left:1em;">
-                    <li class="check">at least one video with native HTML5 controls and poster image</li>
-                    <li class="check">at least one audio element</li>
-                    <li>at least one CSS or JS driven animation; for example, scroll reveal parallax, animated SVG,
-                        typewrite effect, etc.</li>
-                    <li>an interactive media control.</li>
-                    <li>ACCESSIBILITY: captions, transcripts, or clear text summary are require for all audio and video
-                    </li>
-                    <li class="check">Autoplay is only allowed if media is muted (personally, I won't allow autoplay
-                        since I have it
-                        disabled on my own browsers)</li>
-                    <li>Proper commentary in HTML, CSS, and JavaScript explaining what it does and why.</li>
-                </ul>
+                <!--reference: https://www.w3schools.com/howto/howto_js_tabs.asp-->
+                <div id="audio-tab">
+                    <button class="tablink" onclick='showTab(0)'>Song One</button>
+                    <button class="tablink" onclick='showTab(1)'>Song Two</button>
+                    <button class="tablink" onclick='showTab(2)'>Song Three</button>
+                </div>
+                <div id="audio-box">
+                    <div id="litte-song" class="tab-content">
+                        <h3>it's a little song</h3>
+                        <audio controls>
+                            <source src="audio/little_song.mp3" type="audio/mp3">
+                        </audio>
+                        <p>This was a little tune I threw together by overlaying several exported tracks from music lab
+                            over each other in audacity since music lab doesn't allow for more than one instrument to be
+                            selected. I believe I used the marimba and strings for this one.</p>
+                    </div> <!--little song-->
+                    <div id="half-step" class="tab-content">
+                        <h3>Half Step Jam</h3>
+                        <audio controls>
+                            <source src="audio/half_step.mp3" type="audio/mp3">
+                        </audio>
+                        <p>This one uses the synth instrument which I really enjoy! I called it half step since I set
+                            the note length to be really short.</p>
+                    </div> <!--half step-->
+                    <div id="some-kind" class="tab-content">
+                        <h3>a song of some kind</h3>
+                        <audio controls>
+                            <source src="audio/some_kind.wav" type="audio/wav">
+                        </audio>
+                        <p>I actually have a couple of song files named similarly to this one because I made a couple of
+                            iterations of it. This one is a another fun synth</p>
+                    </div>
+                </div>
             </article>
         </section>
     </main>
@@ -78,6 +77,28 @@
     </footer>
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
+    <script>
+        const tabs = document.getElementsByClassName("tab-content"); // array of tab content
+        window.addEventListener("load", tabs[0].style.display = 'block'); // default tab shown
+
+        // buttons send integer corresponding to array index to tabId
+        function showTab(tabId) {
+            // decision tree ensures other tabs aren't selected
+            if (tabId === 0) {
+                tabs[1].style.display = "none";
+                tabs[2].style.display = "none";
+            } else if (tabId === 1) {
+                tabs[0].style.display = "none";
+                tabs[2].style.display = "none";
+            } else { // if tabId = 2
+                tabs[0].style.display = "none";
+                tabs[1].style.display = "none";
+            }
+
+            tabs[tabId].style.display = "block" // selected is show
+        }
+
+    </script>
 </body>
 
 </html>
