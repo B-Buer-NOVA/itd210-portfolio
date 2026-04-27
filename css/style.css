@@ -228,15 +228,6 @@ p {
   margin-bottom: 1em;
 }
 
-nav a {
-  color: white;
-}
-
-nav a:hover {
-  color: black;
-  outline: none;
-}
-
 a {
   color: blue
 }
@@ -252,6 +243,33 @@ a:focus {
   /*hides .desktop links on mobile*/
 }
 
+header {
+  /*flexes all the content horizontally and spaces it nicely*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  /*sticks to top of screen and overlays content*/
+  top: 0;
+  z-index: 2;
+  /*keeps header on top of ALL content*/
+  border-bottom: solid var(--darkerPurple) 5px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+nav ul li {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
 nav a {
   /*nav link colors*/
   color: var(--cream)
@@ -260,14 +278,13 @@ nav a {
 nav a:hover {
   /*base cream*/
   color: white
-}
+} 
 
 nav a:focus,
 #gallery-menu:focus {
   /*also applies to .link*/
+  outline: 3px solid var(--cream);
   outline-offset: 7.5px;
-  outline-width: 3px;
-  outline-color: var(--cream);
 }
 
 .links a:hover {
@@ -296,33 +313,6 @@ nav a:focus,
   background-color: var(--cream);
   border-radius: var(--curve);
   outline: none;
-}
-
-header {
-  /*flexes all the content horizontally and spaces it nicely*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  /*sticks to top of screen and overlays content*/
-  top: 0;
-  z-index: 2;
-  /*keeps header on top of ALL content*/
-  border-bottom: solid var(--darkerPurple) 5px;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  gap: 15px;
-}
-
-nav ul li {
-  list-style-type: none;
-  text-transform: uppercase;
 }
 
 .links {
@@ -363,10 +353,9 @@ nav ul li {
   overflow: hidden;
 }
 
-#gallery-menu:hover,
-#gallery-menu:focus {
+#gallery-menu:hover {
   /*gallery link functions the same as others*/
-  color: white;
+  color: white; 
   cursor: pointer;
   overflow: hidden;
 }
@@ -394,7 +383,6 @@ nav ul li {
   animation: slideDown;
   animation-duration: 0.7s;
 }
-
 
 /*===== id styling =====
 styling by #ids and children of #id parents */
