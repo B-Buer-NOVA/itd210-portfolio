@@ -150,10 +150,7 @@
     max-width: 100%;
     object-fit: cover;
     margin-bottom: 0.5rem;
-  }
-
-  audio {
-    background: var(--darkPurple);
+    border-radius: var(--curve);
   }
 
   table {

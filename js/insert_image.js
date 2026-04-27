@@ -135,7 +135,7 @@ function digitalLightbox() {
         "The (original)  file name for this is \"Silent Destruction\" (none of these drawings retain their original file names for the purposes of this project), and I drew it around 2020 or 2021. I spent a good chunk of time making it, and I was really proud of how it turned out. The meaning behind the name is simple since sound doesn't travel in the void of space the collision of the planet would be silent.",
         "I love this one so much because the cigarette is backwards. It's such a silly little mistake to me and it just brings me so much joy. I shaded with the hatching brush a lot at this time; for some pieces I blended or blurred it out for a smooth finish and for other I left it un-blended.", 
         "This another one of my very quick drawings I did probably for the sake of doodling. This little lemon is really simple with not a lot so it. I still like it.", 
-        "This was another drawing I did in FireAlpaca: I selected a color palette of bright neon color and changed my tablet to grayscale to draw this. I don't think it looks better or worse with or without the grayscale filter; it was mostly just a fun activity for myself."]
+        "This was drawing I did in IbisPaint, a mobile art app: I selected a color palette of bright neon color and changed my tablet to grayscale to draw this. I don't think it looks better or worse with or without the grayscale filter; it was mostly just a fun activity for myself."]
     // descriptionArray variable name reused in traditionalLightbox() because of local scope
 
     const light = document.createElement("div"); // div element

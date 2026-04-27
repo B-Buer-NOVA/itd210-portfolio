@@ -18,20 +18,18 @@
     </header>
     <main>
         <section>
-            <h2>Media page</h2>
+            <h2>Media Demo</h2>
             <article>
-                <h3>Placeholder video</h3>
-                <p>I made this for a previous course when we played around with video controls. It allowed me to
-                    implement the HTML without necessarily having all the content done.</p>
-                <video poster="videos/placeholder_poster.png" controls muted>
-                    <!--alternate video formats for the browser to choose from-->
-                    <source src="videos/placeholder.mp4" type="video/mp4">
-                    <source src="videos/placeholder.webm" type="video/webm">
+                <h2>Speed-paint Video</h2>
+                <p>Below is a video of me drawing one of my drawings from my digital art gallery; this piece was drawn
+                    in IbisPaint which has a function that records and exports video of drawing being created. The below
+                    video plays the drawing in grayscale (how I was seeing it via filter) and in full color. This is no
+                    audio.</p>
+                <video poster="videos/copy.png" controls muted>
+                    <source src="videos/greyscale_color.mp4" type="video/mp4">
                     Something failed to load, sorry.
                 </video>
-                <h4>Video Transcript</h4>
-                <p>[sing-song voice] Placeholder video!. Oh my god, that is quiet.</p>
-                <h3>Old Music</h3>
+                <h2>Old Music</h2>
                 <p>There's a lot of simple online music production website out there (<a href="https://www.beepbox.co/"
                         target="_blank">BeepBox</a> and <a href="https://musiclab.chromeexperiments.com/Song-Maker/"
                         target="_blank">Chrome Music Lab Song Maker</a>, for example), and I played around with them a
@@ -43,7 +41,7 @@
                     <button class="tablink" onclick='showTab(2)'>Song Three</button>
                 </div>
                 <div id="audio-box">
-                    <div id="litte-song" class="tab-content">
+                    <div class="tab-content">
                         <h3>it's a little song</h3>
                         <audio controls>
                             <source src="audio/little_song.mp3" type="audio/mp3">
@@ -52,7 +50,7 @@
                             over each other in audacity since music lab doesn't allow for more than one instrument to be
                             selected. I believe I used the marimba and strings for this one.</p>
                     </div> <!--little song-->
-                    <div id="half-step" class="tab-content">
+                    <div class="tab-content">
                         <h3>Half Step Jam</h3>
                         <audio controls>
                             <source src="audio/half_step.mp3" type="audio/mp3">
@@ -60,7 +58,7 @@
                         <p>This one uses the synth instrument which I really enjoy! I called it half step since I set
                             the note length to be really short.</p>
                     </div> <!--half step-->
-                    <div id="some-kind" class="tab-content">
+                    <div class="tab-content">
                         <h3>a song of some kind</h3>
                         <audio controls>
                             <source src="audio/some_kind.wav" type="audio/wav">
