@@ -356,15 +356,8 @@
     outline-offset: 7.5px;
   }
 
-  .links a:hover {
-    /*hover highlight*/
-    /*since the background is --paleBlue, blue stands out better*/
-    color: rgb(0, 0, 255);
-    outline: none
-  }
-
   #nav-toggle,
-  #back {
+  #back, .links a {
     color: var(--cream);
     background-color: var(--clear);
     padding: 1px 2px;
@@ -373,11 +366,10 @@
     text-align: left;
   }
 
-  /*consistent area for hover highlight*/
   #nav-toggle:hover,
   #nav-toggle:focus,
   #back:hover,
-  #back:focus {
+  #back:focus, .links a:hover {
     cursor: pointer;
     color: var(--darkerPurple);
     background-color: var(--cream);

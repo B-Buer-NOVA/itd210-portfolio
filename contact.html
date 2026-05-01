@@ -33,16 +33,16 @@
                 <fieldset>
                     <legend>email or submission form</legend>
 
-                    <label for="name">Name:</label>
+                    <label for="user-name">Name:</label>
                     <input id="user-name" type="text" name="name" placeholder="Your Name" required></label>
 
-                    <label for="ueer-email">Email:</label>
+                    <label for="user-email">Email:</label>
                     <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required></label>
 
-                    <label for="subject">Subject:</label>
+                    <label for="email-subject">Subject:</label>
                     <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
 
-                    <label for="message">Textarea:</label>
+                    <label for="user-message">Textarea:</label>
                     <!--minimum length of one; doesn't resize; the internal font is sans-serif -->
                     <textarea id="user-message" style="resize:none;font-family:var(--baseFont);" name="message" rows="7"
                         minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true"
@@ -54,8 +54,8 @@
                     <input type="hidden" name="_subject" value="Message from itd210 portfolio, contact.html">
                     <input type="text" name="_gotcha" style="display:none;">
 
-                    <button style="background:inherit;font-size:large;" id="submission" type="submit">Submit your
-                        email!</button>
+                    <label for="submission"><button style="background:inherit;font-size:large;" id="submission" type="submit">Submit your
+                        email!</button></label>
                 </fieldset>
             </form>
 
