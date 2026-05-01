@@ -210,7 +210,9 @@
 
   input,
   textarea,
-  button, select, option {
+  button,
+  select,
+  option {
     font-size: clamp(14px, 4vw, 16px);
     border: 3px solid;
     border-radius: 5px;
@@ -219,10 +221,15 @@
   }
 
   /*form validation*/
-  input:valid, textarea:valid, select:valid {
+  input:valid,
+  textarea:valid,
+  select:valid {
     border-color: var(--valid);
   }
-  input:invalid, textarea:invalid, select:invalid {
+
+  input:invalid,
+  textarea:invalid,
+  select:invalid {
     border-color: var(--invalid);
   }
 
