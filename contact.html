@@ -37,6 +37,9 @@
                     <label>Email:</label>
                     <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required>
 
+                    <label>Subject:</label>
+                    <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
+
                     <label>Textarea:</label>
                     <textarea id="user-message" style="resize:none;font-family:sans-serif;" name="message" rows="7" minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true" required></textarea>
 
@@ -73,6 +76,7 @@
         const username = document.getElementById("user-name");
         const userEmail = document.getElementById("user-email");
         const userMessage = document.getElementById("user-message");
+        const emailSubject = document.getElementById("email-subject");
 
         button.onclick = function() {
             // a JavaScript course I dropped covered custom validity so I referenced that
@@ -89,7 +93,12 @@
             if (userMessage.validity.valueMissing) {
                 userMessage.setCustomValidity("Why send an empty message? Type something!");
             } else {
-                userMessage.setCustomValidity("")
+                userMessage.setCustomValidity("");
+            };
+            if (emailSubject.validity.valueMissing) {
+                emailSubject.setCustomValidity("Please add a subject to the email");
+            } else {
+                emailSubject.setCustomValidity("");
             };
         }
 
