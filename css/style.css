@@ -401,7 +401,7 @@
     right: 0;
 
     /*color*/
-    background-color: var(--paleBlue);
+    background-color: var(--coolBlue);
     border-left: var(--yellowLine);
     text-transform: capitalize;
 
@@ -445,7 +445,7 @@
     min-width: max-content;
     gap: 10px;
     /* similar style to drawer */
-    background-color: var(--paleBlue);
+    background-color: var(--coolBlue);
     border: var(--yellowLine);
     border-radius: var(--curve);
     text-transform: capitalize;
