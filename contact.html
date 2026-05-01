@@ -23,14 +23,10 @@
     <main>
         <section>
             <h2>Contact Form</h2>
-            <aside>
-                <p>Thanks page will only be access by successful submission. This button is for own testing.</p>
-                <button onclick='location.href="thanks.html"'>Test thanks page</button>
-            </aside>
             <form id="contact-form" action="https://formspree.io/f/xdabkava" method="POST">
                 <fieldset>
                     <legend>email or submission form</legend>
-                    
+
                     <label>Name:</label>
                     <input id="user-name" type="text" name="name" placeholder="Your Name" required>
 
@@ -41,7 +37,10 @@
                     <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
 
                     <label>Textarea:</label>
-                    <textarea id="user-message" style="resize:none;font-family:sans-serif;" name="message" rows="7" minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true" required></textarea>
+                    <textarea id="user-message" style="resize:none;font-family:sans-serif;" name="message" rows="7"
+                        minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true"
+                        required></textarea>
+                    <p>Character Count: <span id="character-count"></span></p>
 
                     <label>Bonus! What's your favorite climate?</label>
                     <select> <!--selection not required since it's not needed-->
@@ -53,11 +52,12 @@
                         <option value="wet_cool">Cool and Wet</option>
                     </select>
 
-                    <!--Formspree controls-->
+                    <!--inputs for Formspree-->
                     <input type="hidden" name="_subject" value="Message from itd210 portfolio, contact.html">
                     <input type="text" name="_gotcha" style="display:none;">
-                    
-                    <button id="submission" type="submit">Button Button Button</button>
+
+                    <button style="background:inherit;font-size:large;" id="submission" type="submit">Submit your
+                        email!</button>
                 </fieldset>
             </form>
 
@@ -68,7 +68,7 @@
     </footer>
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
-    <script>
+    <script> // form validation and sending
         const form = document.getElementById("contact-form"); // form
         const button = document.getElementById("submission"); // submission button
 
@@ -78,40 +78,87 @@
         const userMessage = document.getElementById("user-message");
         const emailSubject = document.getElementById("email-subject");
 
-        button.onclick = function() {
-            // a JavaScript course I dropped covered custom validity so I referenced that
-            if (username.validity.valueMissing) {
-                username.setCustomValidity("Please enter a name");
-            } else {
-                username.setCustomValidity("");
-            };
-            if (userEmail.validity.valueMissing) {
-                userEmail.setCustomValidity("Please enter an email");
-            } else {
-                userEmail.setCustomValidity("");
-            };
-            if (userMessage.validity.valueMissing) {
-                userMessage.setCustomValidity("Why send an empty message? Type something!");
-            } else {
-                userMessage.setCustomValidity("");
-            };
-            if (emailSubject.validity.valueMissing) {
-                emailSubject.setCustomValidity("Please add a subject to the email");
-            } else {
-                emailSubject.setCustomValidity("");
-            };
-        }
-
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // resets form when page is reloaded
             form.reset();
         })
 
+        function validateFields() {
+            // a JavaScript course I dropped covered custom validity so I referenced that
+            try {
+                if (username.validity.valueMissing) {
+                    username.setCustomValidity("Please enter a name");
+                    return false;
+                } else {
+                    username.setCustomValidity("");
+                };
+                if (userEmail.validity.valueMissing) {
+                    userEmail.setCustomValidity("Please enter an email");
+                    return false;
+                } else {
+                    userEmail.setCustomValidity("");
+                    return false;
+                };
+                if (userMessage.validity.valueMissing) {
+                    userMessage.setCustomValidity("Why send an empty message? Type something!");
+                    return false;
+                } else {
+                    userMessage.setCustomValidity("");
+                };
+                if (emailSubject.validity.valueMissing) {
+                    emailSubject.setCustomValidity("Please add a subject to the email");
+                    return false;
+                } else {
+                    emailSubject.setCustomValidity("");
+                };
+            } catch (error) {
+                window.alert("An error occured. Please try again");
+                return false;
+            } finally {
+                return true;
+            }
+        }
+
+        function sendForm() {
+            let data = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        form.reset();
+                        location.href = "thanks.html"; // goes to thank you page
+                    } else {
+                        window.alert("An error occurred while submitting the form.")
+                    }
+                })
+                .catch(function () {
+                    alert("Network error. Check your connection, please.")
+                })
+        }
+
+        /* submit event */
         form.addEventListener('submit', (e) => {
-            // reference: https://www.xjavascript.com/blog/clearing-my-form-inputs-after-submission/
             e.preventDefault();
-            location.href="thanks.html"; // goes to thank you page
-            // resets the form when it's submitted
+            let success = validateFields(); // validate fields returns either true or false
+            if (success === true) {
+                sendForm();
+            } else {
+                return null;
+            };
+        })
+    </script>
+    <script>// textarea counter
+    // reference: https://codingartistweb.com/2025/05/building-a-live-character-counter-with-html-css-and-javascript/
+        const textbox = document.getElementById("user-message");
+        const charCount = document.getElementById("character-count");
+
+        textbox.addEventListener("input", function () {
+            const length = textbox.value.length;
+            charCount.textContent = length;
         })
     </script>
 </body>

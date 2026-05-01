@@ -157,13 +157,17 @@
     gap: 0.1rem;
     /* style (really wanna make a gradient border with border-radius)*/
     border: var(--blueLine);
-    color: hotpink;
     text-transform: capitalize;
     border-radius: var(--curve);
+    background-color: white;
   }
 
   fieldset>button {
     margin: 1em 0;
+  }
+
+  fieldset>legend, fieldset>label {
+    color: var(--valid);
   }
 
   header,
