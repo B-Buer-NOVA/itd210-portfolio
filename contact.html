@@ -37,20 +37,12 @@
                     <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
 
                     <label>Textarea:</label>
-                    <textarea id="user-message" style="resize:none;font-family:sans-serif;" name="message" rows="7"
+                    <!--minimum length of one; doesn't resize; the internal font is sans-serif -->
+                    <textarea id="user-message" style="resize:none;font-family:var(--baseFont);" name="message" rows="7"
                         minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true"
                         required></textarea>
                     <p>Character Count: <span id="character-count"></span></p>
-
-                    <label>Bonus! What's your favorite climate?</label>
-                    <select> <!--selection not required since it's not needed-->
-                        <!--not everywhere has four seasons, so I went with this instead-->
-                        <option value="">Select a climate!</option>
-                        <option value="dry_warm">Warm and Dry</option>
-                        <option value="wet_warm">Warm and Humid</option>
-                        <option value="dry_cool">Cool and Dry</option>
-                        <option value="wet_cool">Cool and Wet</option>
-                    </select>
+                    <!--receives character count from JavaScript-->
 
                     <!--inputs for Formspree-->
                     <input type="hidden" name="_subject" value="Message from itd210 portfolio, contact.html">
@@ -152,13 +144,13 @@
         })
     </script>
     <script>// textarea counter
-    // reference: https://codingartistweb.com/2025/05/building-a-live-character-counter-with-html-css-and-javascript/
+        // reference: https://codingartistweb.com/2025/05/building-a-live-character-counter-with-html-css-and-javascript/
         const textbox = document.getElementById("user-message");
         const charCount = document.getElementById("character-count");
 
         textbox.addEventListener("input", function () {
-            const length = textbox.value.length;
-            charCount.textContent = length;
+            const length = textbox.value.length; // updated every time it receives an input
+            charCount.textContent = length; // sends the length to the span in the paragraph
         })
     </script>
 </body>
