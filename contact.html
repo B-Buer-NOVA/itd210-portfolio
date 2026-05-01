@@ -74,40 +74,32 @@
             // resets form when page is reloaded
             form.reset();
         })
-
-        function validateFields() {
+        
+        button.onclick = function() {
             // a JavaScript course I dropped covered custom validity so I referenced that
             try {
                 if (username.validity.valueMissing) {
                     username.setCustomValidity("Please enter a name");
-                    return false;
                 } else {
                     username.setCustomValidity("");
                 };
                 if (userEmail.validity.valueMissing) {
                     userEmail.setCustomValidity("Please enter an email");
-                    return false;
                 } else {
                     userEmail.setCustomValidity("");
-                    return false;
                 };
                 if (userMessage.validity.valueMissing) {
                     userMessage.setCustomValidity("Why send an empty message? Type something!");
-                    return false;
                 } else {
                     userMessage.setCustomValidity("");
                 };
                 if (emailSubject.validity.valueMissing) {
                     emailSubject.setCustomValidity("Please add a subject to the email");
-                    return false;
                 } else {
                     emailSubject.setCustomValidity("");
                 };
             } catch (error) {
-                window.alert("An error occured. Please try again");
-                return false;
-            } finally {
-                return true;
+                window.alert("An error occurred. Please try again");
             }
         }
 
@@ -134,13 +126,9 @@
 
         /* submit event */
         form.addEventListener('submit', (e) => {
+            // 'submit' only occurs on success
             e.preventDefault();
-            let success = validateFields(); // validate fields returns either true or false
-            if (success === true) {
-                sendForm();
-            } else {
-                return null;
-            };
+            sendForm();
         })
     </script>
     <script>// textarea counter
