@@ -7,6 +7,25 @@
     <meta name="Author" content="Berry Buer">
     <title>Thank you!</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #thank_you {
+            height: 100%;
+            padding: 15%;
+            text-align: center;
+            background: radial-gradient(rgba(255, 255,255, 0.4), transparent, transparent), var(--thankyou);
+        }
+
+        #thank_you span {
+            /* color clipping */
+            background: var(--cuteBlue);
+            background-clip: text;
+            /* font handling*/
+            color: transparent;
+            font-size: clamp(4rem, 6vw, 10rem);
+            font-weight: bolder;
+            font-family: Gabriola;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +36,10 @@
         </nav>
     </header>
     <main>
-        
+        <h2 style="display:none">Thanks for submitting!</h2>
+        <div id="thank_you">
+            <span>Thank you for your message!</span>
+        </div>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>

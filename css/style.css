@@ -23,6 +23,7 @@
     --cuteBlue: linear-gradient(var(--coolBlue), var(--paleBlue));
     --coolFade: linear-gradient(var(--clear), var(--coolBlue));
     --blueFade: linear-gradient(var(--clear), var(--paleBlue));
+    --thankyou: linear-gradient(45deg, rgb(255, 200, 200), rgb(250, 200, 255), rgb(200, 200, 255), rgb(200, 250, 255));
 
     /* hero images, for easy reference and alteration */
     --placeholderHero: linear-gradient(rgba(155, 235, 224, .5), rgba(54, 201, 198, .5)), url("../images/1000by1000px.png");
@@ -86,6 +87,21 @@
     to {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  @keyframes slideLoop {
+    /*for thank you page, but I'm having trouble getting it to work*/
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
     }
   }
 
