@@ -27,16 +27,16 @@
                 <fieldset>
                     <legend>email or submission form</legend>
 
-                    <label>Name:</label>
+                    <label for="name">Name:</label>
                     <input id="user-name" type="text" name="name" placeholder="Your Name" required>
 
-                    <label>Email:</label>
+                    <label for="email"></label>Email:</label>
                     <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required>
 
-                    <label>Subject:</label>
+                    <label for="subject">Subject:</label>
                     <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
 
-                    <label>Textarea:</label>
+                    <label for="message">Textarea:</label>
                     <!--minimum length of one; doesn't resize; the internal font is sans-serif -->
                     <textarea id="user-message" style="resize:none;font-family:var(--baseFont);" name="message" rows="7"
                         minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true"

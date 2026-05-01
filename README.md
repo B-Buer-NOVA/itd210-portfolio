@@ -60,3 +60,6 @@ Media page to practice with video and audio elements/controls. Added video and a
 May 4th, 2026
 
 Created a contact.html which houses a form utilizing Formspree for backend functionality. I usually prefer to make separate files for Javascript; however, I decided to keep all the Javascript in the html file for this project. The first inline is the JavaScript for validating and sending the form to Formspree, and the second script counts the number of characters in the textarea. Since thanks.html is a 'special' document, it doesn't have a header, and it only had a button that connects it to the home page. 
+
+## Final Milestone
+May 8th, 2026
