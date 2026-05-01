@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <!--
+    Form validation handled by HTML and JavaScript
+    Formspree handles backend and matches validation requirements initially set by HTML
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
@@ -70,23 +74,7 @@
         const userEmail = document.getElementById("user-email");
         const userMessage = document.getElementById("user-message");
 
-        window.addEventListener('load', function() {
-            // resets form when page is reloaded
-            form.reset();
-        })
-
-        form.addEventListener('submit', (e) => {
-            // reference: https://www.xjavascript.com/blog/clearing-my-form-inputs-after-submission/
-            e.preventDefault();
-            form.reset();            
-            location.href="thanks.html"; // goes to thank you page
-            // resets the form when it's submitted
-        })
-
-        // custom validity check
-        button.onclick = validateForm();
-
-        function validateForm() {
+        button.onclick = function() {
             // a JavaScript course I dropped covered custom validity so I referenced that
             if (username.validity.valueMissing) {
                 username.setCustomValidity("Please enter a name");
@@ -104,6 +92,18 @@
                 userMessage.setCustomValidity("")
             };
         }
+
+        window.addEventListener('load', function() {
+            // resets form when page is reloaded
+            form.reset();
+        })
+
+        form.addEventListener('submit', (e) => {
+            // reference: https://www.xjavascript.com/blog/clearing-my-form-inputs-after-submission/
+            e.preventDefault();
+            location.href="thanks.html"; // goes to thank you page
+            // resets the form when it's submitted
+        })
     </script>
 </body>
 

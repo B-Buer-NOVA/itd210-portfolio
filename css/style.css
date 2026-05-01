@@ -225,6 +225,7 @@
   textarea:valid,
   select:valid {
     border-color: var(--valid);
+    box-shadow: 0 3px var(--valid);
   }
 
   input:invalid,
