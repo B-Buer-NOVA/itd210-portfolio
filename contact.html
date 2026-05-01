@@ -18,10 +18,42 @@
     </header>
     <main>
         <section>
-            <h2>Contact Page</h2>
+            <h2>Contact Form</h2>
             <aside>
-                <p>Content coming soon.</p>
+                <p>Thanks page will only be access by successful submission. This button is for own testing.</p>
+                <button onclick='location.href="thanks.html"'>Test thanks page</button>
             </aside>
+            <form id="contact-form" action="https://formspree.io/f/xdabkava" method="POST">
+                <fieldset>
+                    <legend>email or submission form</legend>
+                    
+                    <label>Name:</label>
+                    <input id="user-name" type="text" name="name" placeholder="Your Name" required>
+
+                    <label>Email:</label>
+                    <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required>
+
+                    <label>Textarea:</label>
+                    <textarea id="user-message" style="resize:none;font-family:sans-serif;" name="message" rows="7" minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true" required></textarea>
+
+                    <label>Bonus! What's your favorite climate?</label>
+                    <select> <!--selection not required since it's not needed-->
+                        <!--not everywhere has four seasons, so I went with this instead-->
+                        <option value="">Select a climate!</option>
+                        <option value="dry_warm">Warm and Dry</option>
+                        <option value="wet_warm">Warm and Humid</option>
+                        <option value="dry_cool">Cool and Dry</option>
+                        <option value="wet_cool">Cool and Wet</option>
+                    </select>
+
+                    <!--Formspree controls-->
+                    <input type="hidden" name="_subject" value="Message from itd210 portfolio, contact.html">
+                    <input type="text" name="_gotcha" style="display:none;">
+                    
+                    <button id="submission" type="submit">Button Button Button</button>
+                </fieldset>
+            </form>
+
         </section>
     </main>
     <footer>
@@ -29,6 +61,50 @@
     </footer>
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
+    <script>
+        const form = document.getElementById("contact-form"); // form
+        const button = document.getElementById("submission"); // submission button
+
+        // user questions
+        const username = document.getElementById("user-name");
+        const userEmail = document.getElementById("user-email");
+        const userMessage = document.getElementById("user-message");
+
+        window.addEventListener('load', function() {
+            // resets form when page is reloaded
+            form.reset();
+        })
+
+        form.addEventListener('submit', (e) => {
+            // reference: https://www.xjavascript.com/blog/clearing-my-form-inputs-after-submission/
+            e.preventDefault();
+            form.reset();            
+            location.href="thanks.html"; // goes to thank you page
+            // resets the form when it's submitted
+        })
+
+        // custom validity check
+        button.onclick = validateForm();
+
+        function validateForm() {
+            // a JavaScript course I dropped covered custom validity so I referenced that
+            if (username.validity.valueMissing) {
+                username.setCustomValidity("Please enter a name");
+            } else {
+                username.setCustomValidity("");
+            };
+            if (userEmail.validity.valueMissing) {
+                userEmail.setCustomValidity("Please enter an email");
+            } else {
+                userEmail.setCustomValidity("");
+            };
+            if (userMessage.validity.valueMissing) {
+                userMessage.setCustomValidity("Why send an empty message? Type something!");
+            } else {
+                userMessage.setCustomValidity("")
+            };
+        }
+    </script>
 </body>
 
 </html>

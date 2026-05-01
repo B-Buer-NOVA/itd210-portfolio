@@ -3,7 +3,7 @@ Capstone Project GitHub Repository for ITD 210
 
 created by Berry Buer for ITD 210 Web Design 2
 
-https://b-buer-nova.github.io/itd210-portfolio/index.html
+link to webpage: https://b-buer-nova.github.io/itd210-portfolio/index.html
 
 My portfolio topic is a portfolio of my artwork I've created in various mediums going back to 2020 at the earliest. As of March 18th, 2026, about.html is the most completed page (requiring a little touch up here and there), index.html has mostly placeholders for its content, and the html pages for crochet, digital art, and physical art have placeholder text for their content. I coded the project in VSCode studio operating on Windows 10 while using FireFox as a primary browser and Google Chrome as a secondary.
 
@@ -57,4 +57,5 @@ April 27th, 2026:
 Media page to practice with video and audio elements/controls. Added video and audio tab section.
 
 ## Milestone 5 - Contact Page
-Coming soon
+May 4th, 2026:
+Form functionality enabled by Formspree.

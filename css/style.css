@@ -16,6 +16,9 @@
     --cream: #faf2a1;
     --clear: rgba(0, 0, 0, 0);
 
+    --valid: rgb(150, 0, 255);
+    --invalid: rgb(255, 100, 100);
+
     /* opaque and transparent gradients */
     --cuteBlue: linear-gradient(var(--coolBlue), var(--paleBlue));
     --coolFade: linear-gradient(var(--clear), var(--coolBlue));
@@ -29,7 +32,8 @@
 
     /* Borders */
     --yellowLine: solid var(--cream) 5px;
-    --curve: 25px;
+    --blueLine: solid var(--paleBlue) 0.3rem;
+    --curve: 1.25rem;
 
     /* Fonts; can easily swap out and change fonts later*/
     --baseFont: sans-serif;
@@ -119,13 +123,31 @@
   }
 
   article,
-  aside {
+  aside,
+  form {
     background-color: white;
     color: black;
     border: var(--yellowLine);
     border-radius: var(--curve);
     padding: 1em;
     margin: 1em auto;
+  }
+
+  fieldset {
+    /* functionality*/
+    display: flex;
+    flex-direction: column;
+    padding: 0.75em 3em;
+    gap: 0.1rem;
+    /* style (really wanna make a gradient border with border-radius)*/
+    border: var(--blueLine);
+    color: hotpink;
+    text-transform: capitalize;
+    border-radius: var(--curve);
+  }
+
+  fieldset>button {
+    margin: 1em 0;
   }
 
   header,
@@ -187,12 +209,21 @@
   }
 
   input,
-  button {
+  textarea,
+  button, select, option {
     font-size: clamp(14px, 4vw, 16px);
-    border-style: solid;
-    border-width: 2px;
+    border: 3px solid;
     border-radius: 5px;
     padding: 5px;
+    background: inherit;
+  }
+
+  /*form validation*/
+  input:valid, textarea:valid, select:valid {
+    border-color: var(--valid);
+  }
+  input:invalid, textarea:invalid, select:invalid {
+    border-color: var(--invalid);
   }
 
   button {
@@ -211,7 +242,8 @@
     font-size: clamp(2em, 4vw, 2.5em);
   }
 
-  h2 {
+  h2,
+  legend {
     font-size: clamp(1.5em, 4vw, 1.8em)
   }
 
@@ -219,13 +251,16 @@
     color: white
   }
 
-  h3 {
+  h3,
+  fieldset>label {
     font-size: clamp(20px, 4vw, 22px);
   }
 
   p,
   li,
-  a {
+  a,
+  input,
+  textarea {
     font-size: clamp(16px, 4vw, 18px);
   }
 
@@ -685,7 +720,7 @@ styling by classes and children of classes*/
   /* classes for media.html tab div*/
   .tab-content {
     /* javascript controls display */
-    display: none; 
+    display: none;
     /*animation on change */
     animation: slideUp;
     animation-duration: 1s;
