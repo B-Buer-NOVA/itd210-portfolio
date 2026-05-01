@@ -11,6 +11,12 @@
     <meta name="Author" content="Berry Buer">
     <title>Contact Page</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,20 +33,20 @@
                 <fieldset>
                     <legend>email or submission form</legend>
 
-                    <label for="name">Name:</label>
-                    <input id="user-name" type="text" name="name" placeholder="Your Name" required>
+                    <label for="name">Name:
+                    <input id="user-name" type="text" name="name" placeholder="Your Name" required></label>
 
-                    <label for="email"></label>Email:</label>
-                    <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required>
+                    <label for="email">Email:
+                    <input id="user-email" type="email" name="email" placeholder="example@hotmail.com" required></label>
 
-                    <label for="subject">Subject:</label>
-                    <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required>
+                    <label for="subject">Subject:
+                    <input id="email-subject" type="text" name="subject" placeholder="Email Subject" required></label>
 
-                    <label for="message">Textarea:</label>
+                    <label for="message">Textarea:
                     <!--minimum length of one; doesn't resize; the internal font is sans-serif -->
                     <textarea id="user-message" style="resize:none;font-family:var(--baseFont);" name="message" rows="7"
                         minlength="1" maxlength="250" placeholder="250 character limit" spellcheck="true"
-                        required></textarea>
+                        required></textarea></label>
                     <p>Character Count: <span id="character-count"></span></p>
                     <!--receives character count from JavaScript-->
 
