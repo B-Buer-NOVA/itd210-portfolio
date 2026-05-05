@@ -39,7 +39,15 @@
     /* Fonts; can easily swap out and change fonts later*/
     --baseFont: sans-serif;
     --fancy: serif;
+    --thanks: gabriela;
   }
+
+  /* custom fonts */
+@font-face {
+  font-family: gabriela;
+  src: url(Gabriela-Regular.ttf);
+  /* google fonts */
+}
 
   /*===== simple animations =====*/
   @keyframes slideIn {
@@ -268,15 +276,16 @@
   /*===== Semantic Text Styling =====*/
   h1 {
     font-size: clamp(2em, 4vw, 2.5em);
+    transition: ease 0.2s;
   }
 
   h2,
   legend {
-    font-size: clamp(1.5em, 4vw, 1.8em)
+    font-size: clamp(1.5em, 4vw, 1.8em);
   }
 
   section>h2 {
-    color: white
+    color: white;
   }
 
   h3,
@@ -297,7 +306,7 @@
   }
 
   a {
-    color: blue
+    color: blue;
   }
 
   a:hover,
@@ -322,6 +331,8 @@
     z-index: 2;
     /*keeps header on top of ALL content*/
     border-bottom: solid var(--darkerPurple) 5px;
+    /* animation for size change */
+    transition: ease 0.2s;
   }
 
   nav ul {
@@ -369,7 +380,7 @@
   #nav-toggle:hover,
   #nav-toggle:focus,
   #back:hover,
-  #back:focus, .links a:hover {
+  #back:focus, .links a:hover, .links a:focus {
     cursor: pointer;
     color: var(--darkerPurple);
     background-color: var(--cream);
@@ -750,7 +761,8 @@ styling by classes and children of classes*/
     text-transform: capitalize;
   }
 
-  /*===== media queries =====*/
+  /*===== media queries =====
+  375px, 768px, 1280px*/
   @media (min-width: 900px) {
 
     /*tablets*/
@@ -875,6 +887,7 @@ styling by classes and children of classes*/
     }
 
     #about-hero {
+      /* changes gif to static image */
       background-image: var(--aboutHeroStatic);
     }
   }

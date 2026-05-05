@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="sticky_shrink">
         <!--Fun and funky font would go here-->
         <h1>Berry's Portfolio</h1>
         <nav id="navigation">
@@ -32,11 +32,10 @@
             <article>
                 <h2>Welcome!</h2>
                 <p>Art has been a major hobby of mine since middle school when I used IbisPaint to make digital art on
-                    my phone. These days, I use an [XPen] tablet and FireAlpaca to create digital art although I also
-                    use IbisPaint from time to time. </p>
+                    my phone. These days, I use an XPen tablet and FireAlpaca to create digital art although I also
+                    use IbisPaint on mobile from time to time. </p>
                 <p>I started learning to crochet when I was 8. My dad had a friend who ran a yarn shop, and we went
-                    there to take her crochet lessons that she also sold. In recent years, I've gotten into Amigurumi
-                    (<em>phonetics/pronunciation guide here</em>) or the art of knitting or crocheting dolls or figures.
+                    there to take her crochet lessons that she also sold. In recent years, I've gotten into Amigurumi or the art of knitting or crocheting dolls or figures.
                     The practice formally started in Japan; hence, why English borrows the Japanese word for it.</p>
             </article>
             <article>
@@ -63,8 +62,10 @@
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <!--functions execute in the order they are listed; nav-toggle doesn't work if navigation is placed before it-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
+    <script src="js/sticky_shrink.js"></script>
 </body>
 
 </HTML>
