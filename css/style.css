@@ -8,7 +8,6 @@
 
   :root {
     /* for easy reference and updating of design elements */
-    /* new color palette */
     --darkerPurple: #401f3e;
     --darkPurple: #3f2e56;
     --coolBlue: #453f78;
@@ -43,13 +42,14 @@
   }
 
   /* custom fonts */
-@font-face {
-  font-family: gabriela;
-  src: url(Gabriela-Regular.ttf);
-  /* google fonts */
-}
+  @font-face {
+    font-family: gabriela;
+    src: url(Gabriela-Regular.ttf);
+    /* google fonts */
+  }
 
-  /*===== simple animations =====*/
+  /*===== simple animations =====
+  keyframes used across various elements */
   @keyframes slideIn {
 
     /*.links menu drawer slides in nicely*/
@@ -75,15 +75,6 @@
     }
   }
 
-  @keyframes loadIn {
-
-    /*animation from module 10 assignment, yet to be implemented*/
-    to {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-
   @keyframes increase {
 
     /*animation for gallery overlays*/
@@ -98,22 +89,38 @@
     }
   }
 
-  @keyframes slideLoop {
-    /*for thank you page, but I'm having trouble getting it to work*/
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
+  @keyframes loadIn {
+    to {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 
-  /*===== ABSOLUTE RESET =====*/
+  /* animation classes, animations that aren't keyframes 
+  importing animation from m10 animation assignment*/
+  .load-hero {
+    opacity: 0;
+    animation: loadIn 0.5s ease forwards;
+  }
+
+  .load-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: loadIn 1s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .active {
+    animation: loadIn 1s ease forwards;
+  }
+
+  /*===== ABSOLUTE RESET =====
+  resetting basic HTML styling from browsers */
   *,
   *::before,
   *::after {
@@ -128,7 +135,8 @@
     scroll-behavior: smooth;
   }
 
-  /*===== Basic Semantic Styling =====*/
+  /*===== Basic Semantic Styling =====
+  styling via semantic html elements.*/
   body {
     font-family: var(--baseFont);
     background-image: var(--cuteBlue);
@@ -174,7 +182,8 @@
     margin: 1em 0;
   }
 
-  fieldset>legend, fieldset>label {
+  fieldset>legend,
+  fieldset>label {
     color: var(--valid);
   }
 
@@ -248,6 +257,17 @@
     background: inherit;
   }
 
+  button {
+    border-color: var(--coolBlue);
+    background-color: var(--cream);
+  }
+
+  button:hover,
+  button:focus {
+    cursor: pointer;
+    outline: 3px solid var(--coolBlue);
+  }
+
   /*form validation*/
   input:valid,
   textarea:valid,
@@ -262,18 +282,8 @@
     border-color: var(--invalid);
   }
 
-  button {
-    border-color: var(--coolBlue);
-    background-color: var(--cream);
-  }
-
-  button:hover,
-  button:focus {
-    cursor: pointer;
-    outline: 3px solid var(--coolBlue);
-  }
-
-  /*===== Semantic Text Styling =====*/
+  /*===== Semantic Text Styling =====
+  size clamping for headers and text*/
   h1 {
     font-size: clamp(2em, 4vw, 2.5em);
     transition: ease 0.2s;
@@ -298,6 +308,7 @@
   a,
   input,
   textarea {
+    /* smallest and most basic text size*/
     font-size: clamp(16px, 4vw, 18px);
   }
 
@@ -314,7 +325,9 @@
     outline: 2px solid blue;
   }
 
-  /*==== Navigation =====*/
+  /*==== Navigation =====
+  semantic, class, and id styling for the navigation elements
+  aesthetic and utility */
   .desktop {
     display: none;
     /*hides .desktop links on mobile*/
@@ -368,7 +381,8 @@
   }
 
   #nav-toggle,
-  #back, .links a {
+  #back,
+  .links a {
     color: var(--cream);
     background-color: var(--clear);
     padding: 1px 2px;
@@ -380,7 +394,9 @@
   #nav-toggle:hover,
   #nav-toggle:focus,
   #back:hover,
-  #back:focus, .links a:hover, .links a:focus {
+  #back:focus,
+  .links a:hover,
+  .links a:focus {
     cursor: pointer;
     color: var(--darkerPurple);
     background-color: var(--cream);
@@ -422,6 +438,7 @@
     display: block;
   }
 
+  /*gallery menu is a drop down for the three gallery links on desktop headers*/
   #gallery-menu {
     overflow: hidden;
   }
@@ -440,6 +457,7 @@
     display: none;
     position: fixed;
     right: 0.5em;
+
     /* link organization*/
     flex-direction: column;
     text-align: left;
@@ -447,18 +465,21 @@
     padding: 1em;
     min-width: max-content;
     gap: 10px;
+
     /* similar style to drawer */
     background-color: var(--coolBlue);
     border: var(--yellowLine);
     border-radius: var(--curve);
     text-transform: capitalize;
+
     /*animation*/
     animation: slideDown;
     animation-duration: 0.7s;
   }
 
   /*===== id styling =====
-styling by #ids and children of #id parents */
+styling by #ids and children of #id parents 
+individual elements across various webpages */
   #index-cards .card:active {
     /*active click only applies to cards on index.html*/
     box-shadow: 0px 10px 20px var(--darkerPurple);
@@ -535,7 +556,7 @@ styling by #ids and children of #id parents */
     font-size: clamp(2em, 4vw, 2.5em);
   }
 
-  /* tab div on media.html styleing */
+  /* tab div on media.html styling */
   #audio-box {
     /* holds and centers content*/
     display: flex;
@@ -579,7 +600,8 @@ styling by #ids and children of #id parents */
   }
 
   /*===== class styling =====
-styling by classes and children of classes*/
+styling by classes and children of classes
+more general elements elements that are reused across various webpages*/
 
   .hero_image {
     height: 100%;
@@ -598,9 +620,8 @@ styling by classes and children of classes*/
     -webkit-text-stroke: 1px white;
   }
 
-  /*new index.html card organization; copied from module 10 animation assignment*/
   .container {
-    /*applies flex to cards on index.html, reused for about.html as a grid*/
+    /* organizes .card children within a grid; mobile first one column */
     margin: 2em auto;
     display: grid;
     grid-template-columns: auto;
@@ -610,11 +631,13 @@ styling by classes and children of classes*/
   .card {
     border-radius: var(--curve);
     background: var(--coolFade);
+
     /*grid to stack text on top of image*/
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     align-items: center;
+
     /*animation*/
     transition: transform 0.5s ease;
   }
@@ -648,6 +671,7 @@ styling by classes and children of classes*/
     line-break: loose;
   }
 
+  /* grids used in the galleries */
   .image-grid {
     /*one column, basic mobile*/
     display: grid;
@@ -668,7 +692,8 @@ styling by classes and children of classes*/
     grid-row: span 1;
   }
 
-  /* lightbox overlay */
+  /* lightbox overlay, used in digital and traditional art galleries
+  class are added to elements via JavaScript */
   .lightbox {
     /*basic function*/
     display: none;
@@ -677,17 +702,20 @@ styling by classes and children of classes*/
     z-index: 3;
     height: 100%;
     width: 100%;
+
     /*margins*/
     margin: 0;
     padding: 2em;
     overflow: auto;
+
     /*color & design*/
     background: var(--darkPurple);
     border-radius: var(--curve);
     border: var(--yellowLine);
     align-items: center;
     justify-content: center;
-    /* animation */
+
+    /* animation; overlay appears and zooms in on click */
     animation: increase;
     animation-duration: 0.5s;
   }
@@ -715,13 +743,14 @@ styling by classes and children of classes*/
   }
 
   .slides {
-    /*images in the lightbox & light*/
+    /* hidden images that are unhidden with JavaScript via getElementsByClass array index */
     display: none;
     border-radius: 0;
   }
 
   .caption {
-    /*Descriptions and background for individual images (separate from alt text)*/
+    /* Descriptions and background for individual images (separate from alt text) 
+    captions match slides index number */
     display: none;
     margin: 1em auto;
     padding: .75em;
@@ -734,6 +763,7 @@ styling by classes and children of classes*/
     /*x button in lightbox*/
     color: white;
     font-size: clamp(2em, 4vw, 2.5em);
+
     /*font-size: clamp(1.5em, 4vw, 1.8em*/
     font-weight: bold;
     position: sticky;
@@ -752,6 +782,7 @@ styling by classes and children of classes*/
   .tab-content {
     /* javascript controls display */
     display: none;
+
     /*animation on change */
     animation: slideUp;
     animation-duration: 1s;
@@ -762,7 +793,8 @@ styling by classes and children of classes*/
   }
 
   /*===== media queries =====
-  375px, 768px, 1280px*/
+  page organization and design change for different screen sizes 
+  breakpoints: 900px, 1000px, 1200px */
   @media (min-width: 900px) {
 
     /*tablets*/
@@ -887,7 +919,7 @@ styling by classes and children of classes*/
     }
 
     #about-hero {
-      /* changes gif to static image */
+      /* changes gif on about.html to static png */
       background-image: var(--aboutHeroStatic);
     }
   }
