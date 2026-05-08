@@ -78,3 +78,21 @@ Created a contact.html which houses a form utilizing Formspree for backend funct
 
 ## Final Milestone - Final Additions and Project Reflection
 May 8th, 2026
+
+I finally added some scrolling animations to the website! The new Javascript files, scroll_animation.js and animation.js, add the animation classes to the indicated elements, but only if the user doesn't have a preference for reduced motion. The variable 'reduceMotion' is a boolean variable that tracks this: if it's false, animation is applied, if it's true, no animation classes are applied. 
+
+For a previous assignment that wasn't pushed to GitHub, I had animation applied first with JavaScript removing it if reduced motion was preferred. I think this new method of applying animation is a lot simpler and more intuitive. 
+
+### Project Reflection
+
+- What is the strongest part of your final site and why?
+I suppose the JavaScript I've written is the strongest part of my website. It's the back bone of a lot of processes within my website: adding images to my galleries, creating and editing navigation content, and adding animation to my webpages. I'm quite surprised at how much JavaScript take up my website since I was doubtful in my abilities to properly implement it at the beginning of the semester.
+
+- What did you learn about responsive design and interactivity this semester?
+I learned a lot about color contrast and making a website properly navigable via tab and tab-shift! It was quite satisfying to make sure elements were able to be properly navigated to with tab, especially the elements that weren't actually buttons or links (the cards on index.html for instance). I also really enjoyed properly implementing reduction of motion with JavaScript.
+
+- Which piece of feedback changed your approach the most?
+The feedback I got on accessibly contrast and colors changed my approach to color palettes and design. I completely changed my color palette at the about page milestone since I found purple and yellow to be nice colors and contrast adequately. I also did my best to ensure words and titles that weren't simple black on white background had good contrast against their backdrop.
+
+- If you had another month, what would you add or refine next?
+I think I would condense scroll_animation.js and animation.js into one file with two or more functions for the webpages to call from, similar to the gallery webpages relationship with insert_image.js. In general, I believe I would play around with JavaScript a lot more, but I can also do that in my free time. 
