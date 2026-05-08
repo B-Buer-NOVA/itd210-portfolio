@@ -503,6 +503,8 @@ individual elements across various webpages */
     /*grid with one column for mobile*/
     display: grid;
     grid-template-columns: auto;
+    animation-delay: 0.8s; 
+    /* delay for reveal and active so it animates after the hero image text appears*/
   }
 
   #about-container img {
