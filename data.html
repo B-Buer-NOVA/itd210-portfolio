@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <!--
+        This was an assignment to practice with fetch public API data. 
+        
+        API used: https://dummyjson.com/recipes
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
@@ -21,15 +26,17 @@
             <h2>Fetch Practice</h2>
             <article>
                 <h3>Fetch Data</h3>
+                <!--some background info and link to the website that provides the API-->
                 <p>This is some JavaScript practice with fetching and displaying data from nested recipes JSON from
                     <a href="https://dummyjson.com/" target="_blank">DummyJSON.com</a>.
                 </p>
                 <p>Every press of the button will add a recipe below the last recipe</p>
+                <!--loading and error messages for users-->
                 <h3>Status</h3>
                 <p id="loadingMessage" style="display:none;">Loading Request</p> <!--display: none-->
                 <p id="errorMessage"></p> <!--receives message from javascript-->
                 <h3>Data Container</h3>
-                <button id="loadButton">Fetch a Recipe!</button>
+                <button id="loadButton">Fetch a Recipe!</button> <!--user fetches a recipe-->
                 <aside id="dataContainer"></aside> <!--data will go inside container-->
             </article>
         </section>
@@ -37,10 +44,13 @@
     <footer>
         <h3>&copy; Berry Buer 2026</h3>
     </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
+    <!--JavaScript functionality for fetch recipes-->
     <script src="js/fetch.js"></script>
 </body>
 

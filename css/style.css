@@ -97,7 +97,7 @@
   }
 
   /* animation classes, animations that aren't keyframes 
-  importing animation from m10 animation assignment*/
+  created via reference previous m10 animation assignment */
   .load-hero {
     opacity: 0;
     animation: loadIn 0.5s ease forwards;
@@ -166,12 +166,12 @@
   }
 
   fieldset {
-    /* functionality*/
+    /* organization and style for contact.html */
     display: flex;
     flex-direction: column;
     padding: 0.75em 3em;
     gap: 0.1rem;
-    /* style (really wanna make a gradient border with border-radius)*/
+    /* style */
     border: var(--blueLine);
     text-transform: capitalize;
     border-radius: var(--curve);
@@ -235,12 +235,14 @@
   }
 
   th {
+    /* ensures headings are capitalized */
     text-transform: capitalize;
     background: linear-gradient(var(--clear), lightblue);
   }
 
   td ul,
   td ol {
+    /* margin and padding for lists on data.html*/
     margin: 1em;
     padding: 1%;
   }
@@ -250,6 +252,7 @@
   button,
   select,
   option {
+    /* form elements for contact.html */
     font-size: clamp(14px, 4vw, 16px);
     border: 3px solid;
     border-radius: 5px;
@@ -258,6 +261,7 @@
   }
 
   button {
+    /* applies to all buttons */
     border-color: var(--coolBlue);
     background-color: var(--cream);
   }
@@ -268,7 +272,8 @@
     outline: 3px solid var(--coolBlue);
   }
 
-  /*form validation*/
+  /*form validation
+  border colors change depending on if form element is valid */
   input:valid,
   textarea:valid,
   select:valid {
@@ -339,9 +344,11 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
+
     /*sticks to top of screen and overlays content*/
     top: 0;
     z-index: 2;
+
     /*keeps header on top of ALL content*/
     border-bottom: solid var(--darkerPurple) 5px;
     /* animation for size change */
@@ -433,8 +440,8 @@
     display: none;
   }
 
-  /*closed #menu-drawer, default position*/
   #menu-drawer.open-drawer {
+    /*closed #menu-drawer, default position*/
     display: block;
   }
 
@@ -480,6 +487,7 @@
   /*===== id styling =====
 styling by #ids and children of #id parents 
 individual elements across various webpages */
+
   #index-cards .card:active {
     /*active click only applies to cards on index.html*/
     box-shadow: 0px 10px 20px var(--darkerPurple);
@@ -503,7 +511,7 @@ individual elements across various webpages */
     /*grid with one column for mobile*/
     display: grid;
     grid-template-columns: auto;
-    animation-delay: 0.8s; 
+    animation-delay: 0.8s;
     /* delay for reveal and active so it animates after the hero image text appears*/
   }
 
@@ -690,6 +698,7 @@ more general elements elements that are reused across various webpages*/
 
   .span-2,
   .span-3 {
+    /* grid spans for images on tradition_art.html*/
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -853,6 +862,8 @@ more general elements elements that are reused across various webpages*/
   }
 
   @media (min-width: 1000px) {
+    /* navigation switches from mobile to desktop design*/
+
     .desktop {
       display: block;
     }

@@ -14,7 +14,8 @@
         <h1>Berry's Portfolio</h1>
         <nav id="navigation">
             <!--navigation content added by HTML-->
-        </nav>    </header>
+        </nav>
+    </header>
     <main>
         <section>
             <h2>Crochet Gallery</h2>
@@ -34,12 +35,16 @@
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
+    <!--Image insertion-->
     <script src="js/insert_image.js"></script>
     <script>
+        // on loading, the function with the corresponding images is called from insert_image.js
         window.addEventListener("load", crochet());
     </script>
 </body>

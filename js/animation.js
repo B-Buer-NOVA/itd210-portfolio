@@ -8,12 +8,13 @@
     them animate on loading instead of scrolling
 */
 
-const oneSection = document.querySelector("section") // one element
+const oneSection = document.querySelector("section") // html element
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce').matches; // boolean variable
 
 // animation is not applied if reduceMotion === true
 if (reduceMotion === false) {
     window.addEventListener("load", function () {
+        /* adding animation classes */
         oneSection.classList.add("reveal");
         oneSection.classList.add("active");
     })

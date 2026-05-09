@@ -17,10 +17,11 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce').matche
 const revealPoint = 10;
 
 
+/* creates array of elements not immediately in the window
+used for about page */
 let excludedAbout = Array();
 for (i = 1; i < allSections.length; i++) {
-    // creates array of elements not immediately in the window
-    // used for about page
+    // excludes first element of allSections array
     excludedAbout.push(allSections[i]);
 }
 

@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <!--
+    Practice with handling video and audio controls
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Berry Buer">
@@ -36,12 +39,15 @@
                     little back in the day. Here's a couple of the pieces I made with Chrome Music lab.</p>
                 <!--reference: https://www.w3schools.com/howto/howto_js_tabs.asp-->
                 <div id="audio-tab">
+                    <!--buttons send an integer corresponding to the index of the tab content-->
                     <button class="tablink" onclick='showTab(0)'>Song One</button>
                     <button class="tablink" onclick='showTab(1)'>Song Two</button>
                     <button class="tablink" onclick='showTab(2)'>Song Three</button>
-                </div>
+                </div> <!--audio tab-->
                 <div id="audio-box">
+                    <!--tab-content which is controlled by JavaScript array and buttons sending their corresponding index number-->
                     <div class="tab-content">
+                        <!--default tab shown-->
                         <h3>it's a little song</h3>
                         <audio controls>
                             <source src="audio/little_song.mp3" type="audio/mp3">
@@ -65,21 +71,29 @@
                         </audio>
                         <p>I actually have a couple of song files named similarly to this one because I made a couple of
                             iterations of it. This one is a another fun synth</p>
-                    </div>
-                </div>
+                    </div> <!--some kind-->
+                </div> <!--audio box-->
             </article>
         </section>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
+    <!--inline JavaScript for handling old music audio box-->
     <script>
-        const tabs = document.getElementsByClassName("tab-content"); // array of tab content
-        window.addEventListener("load", tabs[0].style.display = 'block'); // default tab shown
+        const tabs = document.getElementsByClassName("tab-content"); // array of tab content; three divs
+        window.addEventListener("load", defaultTab()); // first tab shown on default
+
+        function defaultTab() {
+            // shows the first tab
+            tabs[0].style.display = 'block'
+        }
 
         // buttons send integer corresponding to array index to tabId
         function showTab(tabId) {
@@ -95,7 +109,7 @@
                 tabs[1].style.display = "none";
             }
 
-            tabs[tabId].style.display = "block" // selected is show
+            tabs[tabId].style.display = "block" // selected is shown
         }
 
     </script>

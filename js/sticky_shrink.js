@@ -1,6 +1,6 @@
 /*
     sticky header shrink on scroll
-    add ids to each header on the webpage
+    function with ids on each webpage
 
     reference: https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
 */

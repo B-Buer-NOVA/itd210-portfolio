@@ -81,7 +81,7 @@ May 8th, 2026
 
 I finally added some scrolling animations to the website! The new Javascript files, scroll_animation.js and animation.js, add the animation classes to the indicated elements, but only if the user doesn't have a preference for reduced motion. The variable 'reduceMotion' is a boolean variable that tracks this: if it's false, animation is applied, if it's true, no animation classes are applied. 
 
-For a previous assignment that wasn't pushed to GitHub, I had animation applied first with JavaScript removing it if reduced motion was preferred. I think this new method of applying animation is a lot simpler and more intuitive. 
+For a previous assignment that wasn't pushed to GitHub, I had animation applied first with JavaScript removing it if reduced motion was preferred. I think this new method of applying animation is a lot simpler and more intuitive.
 
 ### Project Reflection
 

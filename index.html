@@ -35,23 +35,28 @@
                     my phone. These days, I use an XPen tablet and FireAlpaca to create digital art although I also
                     use IbisPaint on mobile from time to time. </p>
                 <p>I started learning to crochet when I was 8. My dad had a friend who ran a yarn shop, and we went
-                    there to take her crochet lessons that she also sold. In recent years, I've gotten into Amigurumi or the art of knitting or crocheting dolls or figures.
+                    there to take her crochet lessons that she also sold. In recent years, I've gotten into Amigurumi or
+                    the art of knitting or crocheting dolls or figures.
                     The practice formally started in Japan; hence, why English borrows the Japanese word for it.</p>
             </article>
             <article>
                 <h2>Gallery Pages</h2>
                 <p>Click an image to go to its respective gallery!</p>
+                <!--container is a grid that switches between 1 and 3 columns depending on the viewport size-->
                 <div class="container" id="index-cards">
+                    <!--each card div directs to its indicated webpage-->
                     <div class="card" tabindex="0" onclick="location.href='crochet.html';"> <!--Card 1: Crochet Card-->
                         <img src="images/crochet_hook.JPG" alt="teal crochet hook with a crocheted chain of white yarn">
                         <h3>Crochet</h3>
                     </div> <!--card 1-->
-                    <div class="card" tabindex="0" onclick="location.href='digital_art.html';"> <!--Card 2: Digital Art Card-->
+                    <div class="card" tabindex="0" onclick="location.href='digital_art.html';">
+                        <!--Card 2: Digital Art Card-->
                         <img src="images/drawing_tablet.JPG"
                             alt="a drawing tablet with a blue trim and blue number keypad">
                         <h3>Digital Art</h3>
                     </div> <!--card 2-->
-                    <div class="card" tabindex="0" onclick="location.href='traditional_art.html';"> <!--Card 3: Physical Art Card-->
+                    <div class="card" tabindex="0" onclick="location.href='traditional_art.html';">
+                        <!--Card 3: Traditional Art Card-->
                         <img src="images/art_supplies.JPG" alt="erasers and pencils in a stepped plastic tool box">
                         <h3>Traditional Art</h3>
                     </div> <!--card 3-->
@@ -63,10 +68,11 @@
         <h3>&copy; Berry Buer</h3>
     </footer>
     <!--functions execute in the order they are listed; nav-toggle doesn't work if navigation is placed before it-->
-    <script src="js/navigation.js"></script>
-    <script src="js/nav-toggle.js"></script>
-    <script src="js/sticky_shrink.js"></script>
-    <script src="js/scroll_animation.js"></script>
+    <!--These are most of the basic JavaScript file that operate across the website-->
+    <script src="js/navigation.js"></script> <!--creates the nav for all webpages-->
+    <script src="js/nav-toggle.js"></script> <!--toggle for mobile navigation and gallery dropdown menu-->
+    <script src="js/sticky_shrink.js"></script> <!--shrinks the header upon scrolling a certain distance-->
+    <script src="js/scroll_animation.js"></script> <!--scroll animation used on this page and about.html-->
 </body>
 
 </HTML>

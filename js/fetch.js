@@ -2,9 +2,11 @@
     Berry Buer
     Due Date: 3/30/2026
 
+    fetches data from: https://dummyjson.com/
+    nested JSON file: https://dummyjson.com/recipes
 */
 
-// elements by ID, accessible to all functions
+// elements by ID, global variables accessible to all functions
 const loadingMessage = document.getElementById("loadingMessage");
 const errorMessage = document.getElementById("errorMessage");
 const dataContainer = document.getElementById("dataContainer");
@@ -12,6 +14,7 @@ const theButton = document.getElementById("loadButton");
 const tableButton = document.getElementById("loadSomething");
 const arrayLength = document.getElementById("array");
 
+/* Connection and fetching of public API data */
 async function fetchRecipe() {
     // text strings
     const printFailure = "Something went wrong, please try again";
@@ -41,7 +44,10 @@ async function fetchRecipe() {
     };
 }
 
+/* creation of HTML elements to display data to webpage */
 function createTable(data) {
+    // data is a nested array house the recipe JSON data
+
     // selection of random recipe
     const keys = Object.keys(data.recipes);
     let randIndex = Math.floor(Math.random() * keys.length); // fifty total key, thirty limit
@@ -50,7 +56,7 @@ function createTable(data) {
     let ingredients = Object.values(data.recipes[randIndex].ingredients); // creates proper array for ul creation
     let instructions = Object.values(data.recipes[randIndex].instructions); // creates proper array for ol creation
 
-    // title for th rows
+    // titles for th rows
     const infoRowList = ["prep time", "time to cook", "servings", "difficulty", "cuisine", "calories per serving"];
     const otherList = ["ingredients", "instructions"];
 

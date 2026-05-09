@@ -25,6 +25,7 @@
             <h2>Contact Form</h2>
             <form id="contact-form" action="https://formspree.io/f/xdabkava" method="POST">
                 <fieldset>
+                    <!--form elements for users to input into-->
                     <legend>email or submission form</legend>
 
                     <label for="user-name">Name:</label>
@@ -48,8 +49,9 @@
                     <input type="hidden" name="_subject" value="Message from itd210 portfolio, contact.html">
                     <input type="text" name="_gotcha" style="display:none;">
 
-                    <label for="submission"><button style="background:inherit;font-size:large;" id="submission" type="submit">Submit your
-                        email!</button></label>
+                    <label for="submission"><button style="background:inherit;font-size:large;" id="submission"
+                            type="submit">Submit your
+                            email!</button></label>
                 </fieldset>
             </form>
 
@@ -58,9 +60,11 @@
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
     <script> // form validation and sending
         const form = document.getElementById("contact-form"); // form
@@ -76,8 +80,9 @@
             // resets form when page is reloaded
             form.reset();
         })
-        
-        button.onclick = function() {
+
+        // custom feedback for invalid for elements when user clicks submit button
+        button.onclick = function () {
             // a JavaScript course I dropped covered custom validity so I referenced that
             try {
                 if (username.validity.valueMissing) {
@@ -106,6 +111,7 @@
         }
 
         function sendForm() {
+            // form handling and connection to Formspree
             let data = new FormData(form);
 
             fetch(form.action, {
@@ -133,7 +139,7 @@
             sendForm();
         })
     </script>
-    <script>// textarea counter
+    <script>// textarea character counter
         // reference: https://codingartistweb.com/2025/05/building-a-live-character-counter-with-html-css-and-javascript/
         const textbox = document.getElementById("user-message");
         const charCount = document.getElementById("character-count");

@@ -25,25 +25,33 @@
             </aside>
             <aside>
                 <h3>Background</h3>
-                <p>The images are (from left to right, top to bottom) are roughly organized in chronological order spanning 2020
+                <p>The images are (from left to right, top to bottom) are roughly organized in chronological order
+                    spanning 2020
                     to 2024. I wouldn't say any of this is my best work, but I think it's little sample of my art!</p>
                 <p>In the future, I'll probably update the grid organization and artwork showcased.</p>
             </aside>
         </section>
+        <!--hidden section that holds overlay content-->
         <div class="lightbox">
             <span class="close" onclick="closeBox()">&times;</span>
         </div>
     </main>
     <footer>
         <h3>&copy; Berry Buer</h3>
-    </footer>    
+    </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
-    <script src="js/lightbox.js"></script>
+    <!--Image insertion and lightbox creation and handling-->
+    <script src="js/lightbox.js">
+        // handles click events and opening & closing the overlay
+    </script>
     <script src="js/insert_image.js"></script>
     <script>
+        // on loading, the functions with the corresponding image and overlay content are called
         window.addEventListener("load", digital())
         window.addEventListener("load", digitalLightbox())
     </script>

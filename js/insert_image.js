@@ -11,7 +11,7 @@
     with how it turned out!
 */
 
-// GLOBAL CONSTANTS, all functions can call and access them
+/* GLOBAL CONSTANTS, all functions can call and access them */
 // variables for crochet.html
 const crochetGrid = document.getElementById("crochet-grid"); // id attached to an article, for sending to crochet.html
 const crochetAlts = ["a crocheted black cat head with a blue frill collar sitting a desk with a crocheted doll body in the background",
@@ -47,14 +47,14 @@ const digitalAlts = ["a cartoony drawing of a large, lit jack-o-lantern casting 
 const lightbox = document.querySelector(".lightbox")
 
 
-// functions, all able to access global constant for alt text reference and html elements
+/* functions, all able to access global constant for alt text reference and html elements */
 function imageCreation(altText, folderName, fileExtension) {
     // separate function for crochet.html because it doesn't have overlay elements
     // local variables
     let imageStrings = Array(); // hold each image string individually
-    
+
+    // creating the <img> strings based of of all description array and adding them to an array
     for (let i = 0; i < altText.length; i++) {
-        // creating the <img> strings based of of all description array and adding them to an array
         let picture = i + 1; // image name go from 1 to 9
         imageStrings.push("<img src='images/" + folderName + "/" + picture + fileExtension + "' loading='lazy' alt='" + altText[i] + "'>");
     }
@@ -67,8 +67,8 @@ function imageClicks(altText, folderName, fileExtension) {
     // local variables
     let imageStrings = Array(); // hold each image string individually
     
+    // creating the <img> strings based of of all description array and adding them to an array
     for (let i = 0; i < altText.length; i++) {
-        // creating the <img> strings based of of all description array and adding them to an array
         let picture = i + 1; // image name go from 1 to 9
         imageStrings.push("<img src='images/" + folderName + "/" + picture + fileExtension + "' loading='lazy' class='clickMe' tabindex='0' alt='" + altText[i] + "' onclick='openBox();currentSlide(" + i + ")'>");
     }
@@ -77,6 +77,7 @@ function imageClicks(altText, folderName, fileExtension) {
 }
 
 function createGrid(imageList) {
+    // creation of the grid that houses the images
     const addGrid = document.createElement("div"); // gets sent to html
     addGrid.classList.add("image-grid"); // adding the styling class
 
@@ -84,7 +85,7 @@ function createGrid(imageList) {
     return addGrid; // sends grid to be appended to called grid
 }
 
-// functions that each page calls when they load
+/* functions that each page calls when they load */
 function crochet() {
     // crochet.html calls this function upon loading
     let sendString = ""; // single string to send to addGrid
@@ -126,7 +127,7 @@ function digital() {
     digitalGrid.appendChild(createGrid(sendString)) // sends div grid to article
 }
 
-// for lightbox functions 
+/* functions that create and send content for lightbox/overlay */
 function digitalLightbox() {
     // digital_art.html calls function upon loading
     // descriptionArray in the same order as images; sent to html for lightbox.js to use

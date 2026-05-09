@@ -31,7 +31,7 @@
                     photos of them to Canvas.</p>
             </aside>
         </section>
-
+        <!--hidden section that holds overlay content-->
         <div class="lightbox">
             <span class="close" onclick="closeBox()">&times;</span>
         </div>
@@ -39,13 +39,19 @@
     <footer>
         <h3>&copy; Berry Buer</h3>
     </footer>
+    <!--navigation and header JavaScript-->
     <script src="js/navigation.js"></script>
     <script src="js/nav-toggle.js"></script>
     <script src="js/sticky_shrink.js"></script>
+    <!--animation on load-->
     <script src="js/animation.js"></script>
-    <script src="js/lightbox.js"></script>
+    <!--Image insertion and lightbox creation and handling-->
+    <script src="js/lightbox.js">
+        // handles click events and opening & closing the overlay
+    </script>
     <script src="js/insert_image.js"></script>
     <script>
+        // on loading, the functions with the corresponding image and overlay content are called
         window.addEventListener("load", traditional());
         window.addEventListener("load", traditionalLightbox());
     </script>

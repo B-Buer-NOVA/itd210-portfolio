@@ -3,7 +3,9 @@
 
 <head>
     <!--
-    this webpage doesn't need a header, so I excluded it
+    Since this webpage is only a confirmation / affirmation of contact form submission, 
+    it doesn't have a header and only navigates back to index.html
+    It also doesn't connect to any of the JavaScript files
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +13,27 @@
     <title>Thank you!</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* design for thank you div */
         #thank_you {
+            /* organization for div contents */
             display: flex;
             flex-direction: column;
             height: 100%;
             padding: 20%;
             text-align: center;
-            background: radial-gradient(rgba(255, 255, 255, 0.4), transparent, transparent), var(--thankyou);
+
+            /* layered background design */
+            background:
+                radial-gradient(rgba(255, 255, 255, 0.5), transparent, transparent),
+                var(--thankyou);
         }
 
+        /* design and clipping for #thank_you title span*/
         #thank_you span {
             /* color clipping */
             background: var(--cuteBlue);
             background-clip: text;
+
             /* font size */
             color: transparent;
             text-wrap: none;
@@ -40,6 +50,7 @@
         <div id="thank_you">
             <span>Thank you for your message!</span>
             <button onclick='location.href="index.html"'>Return to home page</button>
+            <!--the button directs user back to the main page-->
         </div>
     </main>
     <footer>
